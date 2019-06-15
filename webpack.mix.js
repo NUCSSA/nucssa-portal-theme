@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
  | https://laravel-mix.com/
  */
 mix.sass('style.scss', './')
+    .sass('style-editor.scss', './')
     .browserSync({
       proxy: 'wp.localhost',
       files: [ '*.php', ],
