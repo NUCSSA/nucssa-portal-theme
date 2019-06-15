@@ -1,0 +1,7 @@
+node_modules
+mix-manifest.json
+vendor
+.DS_Store
+.elixir_ls
+.vscode
+log.txt
