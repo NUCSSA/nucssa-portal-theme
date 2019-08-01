@@ -1,4 +1,17 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');
+const purgecssWordpress = require('purgecss-with-wordpress');
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: [
+    './*.php',
+    'inc/**/*.php',
+    'assets/js/**/*.js',
+    'assets/js/**/*.jsx',
+    'views/**/*.twig',
+  ],
+  whitelist: purgecssWordpress.whitelist,
+  whitelistPatterns: purgecssWordpress.whitelistPatterns,
+});
 
 /*
  |--------------------------------------------------------------------------
@@ -12,10 +25,10 @@ const mix = require('laravel-mix');
  | For Details of the configuration, take a look at Laravel-mix project:
  | https://laravel-mix.com/
  */
+const postCss = mix.inProduction() ? [tailwindcss, purgecss] : [tailwindcss];
 mix.sass('assets/scss/style.scss', 'dist/css/')
     .sass('assets/scss/style-editor.scss', 'dist/css/')
     .copyDirectory('assets/images/', 'dist/images/')
-    // TODO: add csspurge when everything is ready to deploy
     .browserSync({
       proxy: 'wp.localhost',
       files: [ '*.php', 'dist/'],
@@ -24,5 +37,6 @@ mix.sass('assets/scss/style.scss', 'dist/css/')
     })
     .options({
       processCssUrls: false,
+      postCss,
     })
     .sourceMaps(false, 'eval-source-map');
