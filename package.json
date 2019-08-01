@@ -3,26 +3,28 @@
   "version": "1.0.0",
   "description": "Theme for NUCSSA WordPress Portal",
   "author": "NUCSSA IT",
+  "repository": "https://github.com/NUCSSA/nucssa-portal-theme",
+  "license": "UNLICENSED",
   "scripts": {
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "rm -rf dist && cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "start": "npm run development -- --watch",
     "compile": "composer dump-autoload -o"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.0.1",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "cross-env": "^5.2.0",
-    "laravel-mix": "^4.0.16",
-    "resolve-url-loader": "^2.3.1",
-    "sass": "^1.21.0",
-    "sass-loader": "^7.1.0"
+    "laravel-mix": "^4.1.2",
+    "resolve-url-loader": "^2.3.2",
+    "sass": "^1.22.9",
+    "sass-loader": "^7.1.0",
+    "tailwindcss": "^1.0.6"
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "materialize-css": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

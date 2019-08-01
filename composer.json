@@ -1,11 +1,11 @@
 {
   "require": {
-
+    "timber/timber": "^1.10"
   },
   "autoload": {
-    "files": [],
+    "files": ["inc/constants.php"],
     "psr-4": {
-      "": ["classes/"]
+      "": ["inc/"]
     }
   }
 }

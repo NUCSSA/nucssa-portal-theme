@@ -5,3 +5,4 @@ vendor
 .elixir_ls
 .vscode
 log.txt
+TODO.*

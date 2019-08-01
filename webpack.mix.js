@@ -12,12 +12,17 @@ const mix = require('laravel-mix');
  | For Details of the configuration, take a look at Laravel-mix project:
  | https://laravel-mix.com/
  */
-mix.sass('style.scss', './')
-    .sass('style-editor.scss', './')
+mix.sass('assets/scss/style.scss', 'dist/css/')
+    .sass('assets/scss/style-editor.scss', 'dist/css/')
+    .copyDirectory('assets/images/', 'dist/images/')
+    // TODO: add csspurge when everything is ready to deploy
     .browserSync({
       proxy: 'wp.localhost',
-      files: [ '*.php', ],
+      files: [ '*.php', 'dist/'],
       open: false,
       ghostMode: false,
+    })
+    .options({
+      processCssUrls: false,
     })
     .sourceMaps(false, 'eval-source-map');
