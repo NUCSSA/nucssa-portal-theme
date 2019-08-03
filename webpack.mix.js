@@ -28,10 +28,11 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 const postCss = mix.inProduction() ? [tailwindcss, purgecss] : [tailwindcss];
 mix.sass('assets/scss/style.scss', 'dist/css/')
     .sass('assets/scss/style-editor.scss', 'dist/css/')
+    .js('assets/js/main.js', 'dist/js/main.v1.js')
     .copyDirectory('assets/images/', 'dist/images/')
     .browserSync({
       proxy: 'wp.localhost',
-      files: [ '*.php', 'dist/'],
+      files: [ '*.php', '*.twig', '*.js', 'dist/', 'inc/', 'views/'],
       open: false,
       ghostMode: false,
     })

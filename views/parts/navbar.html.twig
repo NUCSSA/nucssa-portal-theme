@@ -1,0 +1,17 @@
+{% include 'parts/nav-panel.html.twig' %}
+<nav class="container py-1 flex items-center fixed">
+  {# nav toggle #}
+  <button class="nav-toggle">
+    <span></span>
+  </button>
+
+  {# branding logo #}
+  <a href="{{site.url}}" class="m-auto">
+    <img class="w-10" src="{{theme.uri ~ '/dist/images/logo.png'}}" alt="NUCSSA Logo" >
+  </a>
+
+  {# user profile toggle #}
+  <a href="#" class="mr-0">
+    <img class="rounded-full" src="{{user.avatar({size: 30})}}" alt="current user avatar">
+  </a>
+</nav>
