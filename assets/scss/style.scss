@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(https://fonts.nucssa.org/nucssa-icon-font/style.css);
+@import 'parts/variables';
+@import 'parts/btn';
+@import 'parts/form-input';
+@import 'parts/carousel';
+@import 'parts/tooltip';
+@import 'parts/container';
+@import 'parts/layout';
+@import 'parts/navbar.scss';
+@import 'parts/front-page-cards.scss';
+@import 'parts/footer.scss';
+@import 'parts/search-result-page';
+@import 'parts/pagination';
+
+html {@apply bg-gray-100;
+
+}
+
+main {
+  section + section {
+    @apply my-2;
+  }
+
+  section + section::before {
+    content: '';
+    @apply block relative mt-4;
+    width: 25%; height: 2px; background: #d92110c2; opacity: .38;
+    left: 50%; transform: translateX(-50%);
+    margin-bottom: .406rem;
+  }
+
+  section {
+    .section-title {
+      @apply text-center text-nucssa-section-title text-2xl font-bold mb-2;
+    }
+
+    .section-ending-controls {
+      @apply flex justify-center;
+
+      .btn-see-all {
+        &:hover {
+          background-color: darken($color: $view-all-btn, $amount: 5%);
+        }
+        @apply bg-nucssa-view-all-btn text-sm text-white rounded-lg mt-6 relative flex items-center;
+        padding: .6875rem 2.125rem;
+
+        .icon {@apply absolute;
+          right: 1.15rem;
+        }
+      }
+    }
+  }
+}

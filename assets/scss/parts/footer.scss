@@ -1,0 +1,81 @@
+#footer {
+  @apply flex justify-center;
+  background-image: linear-gradient(#601C16, #140503);
+  .col {
+    @apply w-full flex flex-col items-center px-2;
+  }
+
+  .col-1 {
+    .brand-title {
+      @apply text-nucssa-standard font-bold text-6xl my-4;
+      line-height: 3rem;
+      transform: scaleX(.9);
+    }
+    .qr-code {
+      max-width: 190px;
+    }
+
+  }
+
+  .col-2 {
+    @apply pb-10 px-5;
+    nav.policy-menu ul {
+      @apply flex flex-wrap justify-center font-hairline text-sm;
+      color: #E5127D;
+      line-height: 2rem;
+
+      li + li::before {
+        content: '•';
+        @apply mx-1;
+      }
+    }
+  }
+
+  .col-3 {
+    .brand-image {
+      width: 11.625rem;
+    }
+    .footer-nav ul {
+      @apply flex flex-col items-center font-hairline text-white text-sm;
+
+      li + li {
+        @apply mt-4;
+      }
+    }
+    .copyright{
+      color: rgba(255,255,255,0.5);
+      // color: white;
+      font-size: 0.8rem;
+      font-weight: 100;
+      transform: scaleY(1.1);
+    }
+  }
+}
+
+
+@screen md {
+  #footer {
+    .col {@apply w-1/3;}
+    .col-1 {}
+    .col-2 { @apply pb-0;
+      nav.policy-menu ul {
+        @apply text-base text-white;
+        line-height: 3rem;
+      }
+      // Social Links
+      .social-icons {
+        a + a {@apply ml-4;}
+      }
+
+    }
+    .col-3 {
+      @apply items-end;
+
+      .footer-nav ul {
+        @apply text-base items-end;
+      }
+
+      .copyright {@apply text-right;}
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<nav id="globalnav" class="sticky w-screen z-10">
+  {% include 'parts/nav-panel.html.twig' %}
+  <div class="navbar container py-1 flex items-center justify-between">
+
+    {# nav toggle #}
+    <button class="nav-group nav-toggle focus:outline-none">
+      <span></span>
+    </button>
+
+    {# branding logo #}
+    <a class="nav-group branding" href="{{site.url}}">
+      <img class="logo" src="{{theme.uri ~ '/dist/images/logo.png'}}" alt="NUCSSA Logo" >
+      <div class="name">
+        <div class="title text-2xl font-bold text-nucssa-title leading-none">{{site.title}}</div>
+        <p class="subtitle text-sm text-nucssa-subtitle leading-tight">{{site.description}}</p>
+      </div>
+    </a>
+
+    <div class="flex-grow hidden md:flex justify-end mx-8">
+
+      {# menu items #}
+      <ul class="nav-group nav-menu">
+        {% for item in main_nav.items %}
+          <li class="{{ item.classes|join(' ') }}">
+            <a class="nav-link" href="{{ item.link }}">{{ item.title|striptags }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {# Searchbar #}
+      <form class="nav-group searchbar" action="{{ site.link }}">
+        <div class="form-input">
+          <label class="icon icon-search btn nav-link" for="searchbar"></label>
+          <input type="text" id="searchbar" name="s" value="{{ request.get.s }}" />
+        </div>
+      </form>
+    </div>
+
+    {# user profile toggle #}
+    {% if function('is_user_logged_in') %}
+      <a href="{{ function('get_edit_profile_url') }}"
+        class="nav-group mr-0 user-profile"
+        aria-label="My Profile"
+        data-balloon-pos="left"
+      >
+        <img class="rounded-full" src="{{user.avatar({size: 30})}}" alt="current user avatar">
+      </a>
+    {% else %}
+      <a class="nav-group btn btn-login" data-opentab="#login">Log In</a>
+    {% endif %}
+
+
+  </div>
+</nav>

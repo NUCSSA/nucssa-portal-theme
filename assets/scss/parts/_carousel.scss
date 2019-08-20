@@ -1,0 +1,36 @@
+@import '~flickity/dist/flickity';
+.carousel {
+  .carousel-card {
+    width: 100%;
+    padding-top: 49%;
+    @screen sm {padding-top: 22.8%;}
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .flickity-button {
+    visibility: hidden;
+
+    @screen sm {
+      visibility: visible;
+      background: transparent; color: white; opacity: .25;
+      transform: scaleY(1.5) translateY(-40%);
+      &:hover {opacity: .9;}
+    }
+  }
+  .flickity-page-dots { position: absolute; bottom: .5rem;
+    .dot {width: 2rem; height: .25rem; border-radius: 5px; background: white; opacity: .25;}
+    .dot.is-selected {opacity: .8;}
+  }
+
+  .gradient-cover {
+    @apply absolute w-full h-full top-0 left-0;
+    // background-image: linear-gradient(to right, #605c5c 0%, #605c5c80 7%, #605c5c00 13% 87%, #605c5c80 93%, #605c5c 100%);
+    background-image: linear-gradient(to right, #0000003b 0%, #00000000 13% 87%, #0000003b 100%);
+  }
+}
+
+.carousel:hover .gradient-cover {
+  background-color: rgba(0, 0, 0, .05);
+}

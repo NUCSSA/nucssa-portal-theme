@@ -1,0 +1,10 @@
+.container {
+  // default
+  @apply w-full mx-auto;
+
+  // md and above
+  @screen md {
+    @apply max-w-6xl;
+    padding: auto 5%;
+  }
+}

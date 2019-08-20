@@ -1,0 +1,10 @@
+.pagination-block {@apply p-3 mb-6;
+
+  .pagination{
+    @apply flex items-center justify-center;
+    li + li {@apply ml-4;}
+    .page-number.current {@apply font-bold;}
+    .page-number:not(.current):hover,
+    .btn:not(.disabled):hover {@apply text-nucssa-title font-bold;}
+  }
+}
