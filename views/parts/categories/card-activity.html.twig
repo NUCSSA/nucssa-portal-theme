@@ -3,7 +3,7 @@
     <a href="{{post.link}}" class="absolute block w-full h-full">
       <div class="title-outer-box">
         <div class="title-inner-box">
-          <h2 class="title">{{post.title}}</h2>
+          <h2 class="title">{{post.title|striptags|raw}}</h2>
           <p class="subtitle">活动</p>
         </div>
       </div>
