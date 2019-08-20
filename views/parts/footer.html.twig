@@ -1,0 +1,47 @@
+<footer id="footer">
+  <div class="container flex flex-wrap items-center pt-12 pb-10 md:px-12">
+    <div class="col col-1">
+      <div class="md:mr-auto flex flex-col items-center">
+        <div class="brand-title">NUCSSA</div>
+        {# QR code #}
+        <img class="qr-code hidden md:block" src="{{ theme.link ~ '/dist/images/qr-code.png' }}" alt="微信公众号二维码">
+      </div>
+    </div>
+    <div class="col col-2 self-stretch flex flex-col justify-between">
+      {# policy menu #}
+      <nav class="policy-menu">
+        <ul>
+          {% for item in policy_menu.items %}
+            <li class="{{ item.classes|join(' ') }}">
+              <a href="{{ item.link }}">{{ item.title|striptags }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      {# social media links #}
+      <div class="social-icons flex justify-between text-2xl hidden md:block">
+        <a href="{{theme.uri ~ '/dist/images/qr-code.png'}}"><i class="icon icon-wechat text-green-800"></i></a>
+        <a href="https://www.weibo.com/neucssa"><i class="icon icon-sina-weibo text-red-800"></i></a>
+        <a href="https://www.facebook.com/NEUCSSA"><i class="icon icon-facebook text-blue-800"></i></a>
+        <a href="https://www.instagram.com/nucssa/"><i class="icon icon-instagram text-pink-800"></i></a>
+      </div>
+    </div>
+    <div class="col col-3">
+      {# footer nav #}
+      <nav class="footer-nav">
+        <ul>
+          {% for item in footer_nav.items %}
+            <li class="{{ item.classes|join(' ') }}">
+              <a href="{{ item.link }}">{{ item.title|striptags }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <img class="brand-image" src="{{nucssa_logo_url}}" alt="brand-image" />
+      <div class="copyright">
+        © {{ 'now'|date('Y') }} NUCSSA All Rights Reserved
+      </div>
+    </div>
+  </div>
+</footer>

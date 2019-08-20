@@ -1,0 +1,14 @@
+<article class="card-author">
+  <a href="{{ author.link }}">
+    <img class="author-thumbnail" src="{{ author.avatar }}" />
+  </a>
+  <div class="author-detail">
+    <div class="author-name">
+      <a href="{{ author.link }}">{{ author.name }}</a>
+    </div>
+    <div class="author-url"><a href="{{ author.user_url }}">{{ author.user_url }}</a></div>
+    <div class="author-description">
+      {{ ( author.meta('description')|length > 50 ? (author.meta('description') | slice(0, 50) ~'...') : author.meta('description') ) | raw }}
+    </div>
+  </div>
+</article>

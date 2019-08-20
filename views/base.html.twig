@@ -13,12 +13,14 @@
     {% include "parts/navbar.html.twig" %}
   </header>
 
+  {# main OR main + aside #}
   {% block content %}
+    <main></main>
   {% endblock %}
 
-  <footer id="footer">
-    {% include 'parts/footer.html.twig' %}
-  </footer>
+  {% include 'parts/footer.html.twig' %}
+
+  {# <footer> #}
   {{ function('wp_footer') }}
 </body>
 </html>

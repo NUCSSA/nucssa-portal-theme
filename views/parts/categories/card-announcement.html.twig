@@ -1,0 +1,19 @@
+{#
+  TODO:
+    Incomplete
+#}
+<article class="card announcement" style="background-image: url('{{(post.thumbnail.src ?? placeholder_thumbnail_url)|resize(730)}}')">
+  <div class="card-content-wrapper">
+    <a href="{{post.link}}" class="absolute block w-full h-full">
+      <h2 class="title">{{post.title|striptags|raw}}</h2>
+      <p class="subtitle">{{ post.preview.length(30).read_more(null) | raw }}</p>
+      <p class="subtitle">通告</p>
+      {# <div class="title-outer-box">
+        <div class="title-inner-box">
+          <h2 class="title">{{post.title}}</h2>
+          <p class="subtitle">活动</p>
+        </div>
+      </div> #}
+    </a>
+  </div>
+</article>

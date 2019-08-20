@@ -1,7 +1,53 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<main>
+{# FEATURED POSTS CAROUSEL #}
+<div class="featured-posts">
+  {% if featured_posts is not empty %}
+    <div class="carousel js-flickity" data-flickity-options='{"cellAlign": "center", "contain": true, "wrapAround": true}'>
+      {% for post in featured_posts %}
+        <a class="carousel-card"
+          href="{{ post.link }}"
+          style="background: url('{{ post.thumbnail.src ?? placeholder_thumbnail_url }}')"
+        >
+          <div class="gradient-cover"></div>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<main class="mt-5 mb-8">
+  <section class="latest-posts p-2">
+    <h1 class="section-title">最新动态</h1>
+    <div class="post-cards">
+      {% for post in latest_posts %}
+
+        {# apply diff card template for diff post categories #}
+        {% include ["parts/categories/card-#{post.category.slug}.html.twig", 'parts/categories/card-standard.html.twig'] %}
+
+      {% endfor %}
+    </div>
+    <div class="section-ending-controls">
+      <a href="{{ function('home_url') }}" class="btn btn-see-all">查看所有更新 <i class="icon icon-arrow-right-thin"></i></a>
+    </div>
+  </section>
+
+
+  <section class="most-viewed p-2">
+    <h1 class="section-title">人气最高</h1>
+    <div class="post-cards">
+      {% for post in most_viewed %}
+
+        {# apply diff card template for diff post categories #}
+        {% include ["parts/categories/card-#{post.category.slug}.html.twig", 'parts/categories/card-standard.html.twig'] %}
+
+      {% endfor %}
+    </div>
+    <div class="section-ending-controls">
+      <a href="{{ function('home_url') }}" class="btn btn-see-all">查看所有更新 <i class="icon icon-arrow-right-thin"></i></a>
+    </div>
+  </section>
 
 </main>
 {% endblock %}

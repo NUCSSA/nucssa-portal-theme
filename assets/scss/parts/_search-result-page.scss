@@ -1,0 +1,49 @@
+body.search main {
+
+  /**
+   * Keyword Highlight
+   */
+  .search-highlight {@apply font-bold; background-color: yellow;}
+
+  /**
+   * Search Bar
+   */
+  .searchbar { @apply flex items-center;
+    .form-input {
+      @apply w-full;
+      input {@apply w-full border-nucssa-standard border border-solid rounded-full text-lg py-2 outline-none;}
+      label, input {@apply text-nucssa-subtitle font-bold;}
+    }
+  }
+
+
+  /**
+   * Search Result Content
+   */
+  section {@apply my-6;}
+  .section-tilte {@apply text-lg text-nucssa-section-title mb-6;}
+
+  // Authors Section
+  .authors {@apply flex items-stretch justify-center flex-wrap;}
+  .card-author {@apply flex items-center shadow-2xl rounded-lg py-4 px-6 m-2 bg-white;
+    .author-thumbnail {@apply h-16 w-16 rounded-full mr-6;}
+    .author-detail { max-width: 200px;
+      .author-name {@apply font-bold text-nucssa-tooltip-2;}
+      .author-url {@apply text-orange-900;}
+      .author-description {@apply mt-1;}
+    }
+  }
+
+  // Posts Section
+  .posts {@apply flex flex-wrap justify-between;}
+  .card-post {@apply flex items-center shadow-md my-2 w-full;
+    @screen lg {width: 49%;}
+
+    .post-thumbnail {@apply h-48 w-48 object-cover;}
+    .post-detail {@apply self-start py-2 px-4;
+      .post-title {@apply font-bold text-nucssa-title;}
+      .post-meta {@apply text-sm italic text-gray-700;}
+      .post-excerpt {@apply mt-4 text-gray-900;}
+    }
+  }
+}
