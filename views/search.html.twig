@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+  <main class="container">
+    <h2 class="text-xl font-medium text-center py-4">
+      {# NO Match #}
+      {% if posts is empty and authors is empty %}
+        No Results Found for "<span class="text-nucssa-subtitle font-bold">{{ request.get.s }}</span>", Try another search:
+      {% else %}
+        Search results for "<span class="text-nucssa-subtitle font-bold">{{ request.get.s }}</span>"
+      {% endif %}
+    </h2>
+    {# search bar #}
+    <form class="searchbar" action="{{ site.link }}">
+      <div class="form-input">
+        <label class="icon icon-search btn nav-link" for="search-result-searchbar"></label>
+        <input type="text" id="search-result-searchbar" name="s" value="{{ request.get.s }}" placeholder="搜索文章、活动、和商家促销" />
+      </div>
+    </form>
+
+    <div class="content-wrapper">
+      {# Authors query by names #}
+      {% if authors %}
+        <section>
+          <h3 class="section-title">小作者们</h3>
+          <div class="section-content authors">
+            {% for author in authors %}
+              {% include "parts/search-cards/search-card-author.html.twig" %}
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+
+      {# Matching Posts #}
+      {% if posts %}
+        <section>
+          <h3 class="section-title">文章</h3>
+          <div class="section-content posts">
+            {% for post in posts %}
+              {% include ["parts/search-cards/search-card-post-type-#{post.post_type}.html.twig", "parts/search-cards/search-card-post-type-standard.html.twig"] %}
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+
+      {% include 'parts/pagination.html.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
+    </div>
+
+  </main>
+
+{% endblock %}

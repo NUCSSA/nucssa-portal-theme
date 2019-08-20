@@ -1,35 +1,35 @@
-<div id="nav-panel" class="w-screen h-screen sm:hidden flex flex-col">
+<div id="nav-panel" class="w-screen h-screen md:hidden flex flex-col overflow-y-auto">
   {# section branding #}
-  <section class="flex items-center px-4 py-8 bg-red-100 justify-center">
-    <img src="{{theme.uri~'/dist/images/logo.png'}}" alt="logo" width="65">
+  <section class="flex items-center px-4 py-9 bg-red-100 justify-center">
+    <img src="{{theme.uri ~ '/dist/images/logo.png'}}" alt="logo" width="65">
     <div class="flex flex-col justify-center px-1 ml-1">
-      <div class="title text-2xl font-bold text-red-nucssa-title leading-none">{{site.title}}</div>
-      <p class="subtitle text-sm text-red-nucssa-subtitle leading-tight">{{site.description}}</p>
+      <div class="title text-2xl font-bold text-nucssa-title leading-none">{{site.title}}</div>
+      <p class="subtitle text-sm text-nucssa-subtitle leading-tight">{{site.description}}</p>
     </div>
   </section>
 
   {# section nav menu #}
-  <section class="p-4 flex-grow flex flex-col" style="background-color:#d921101c">
+  <section class="p-4 flex-grow flex flex-col" style="background-color:#fbe7e5">
     {# search bar #}
-    <form class="searchbar flex items-center" method="get">
-      <input class="rounded-full border-solid border-red-nucssa-title border pl-8 w-full leading-loose text-sm py-1" type="search" name="s" placeholder="搜索文章、活动、和商家促销" />
-      <i class="icon icon-search absolute text-2xl text-red-nucssa-title"></i>
+    <form class="searchbar flex items-center" method="get" action="{{site.url}}">
+      <input class="outline-none rounded-full border-solid border-nucssa-title border pl-8 w-full leading-loose text-sm py-1" type="search" name="s" value="{{ request.get.s }}" placeholder="搜索文章、活动、和商家促销" />
+      <i class="icon icon-search absolute text-nucssa-title"></i>
     </form>
 
     {# nav items #}
     <nav role="navigation" class="flex-grow p-6 mt-2 text-xl">
       <ul>
-        <li><a href="{{site.url}}"><i class="icon icon-home text-2xl"></i>主页</a></li>
-        <li><a href="{{site.url~'/clubs'}}"><i class="icon icon-basketball-hoop1 text-4xl"></i>社团</a></li>
-        <li><a href="{{site.url~'/columns'}}"><i class="icon icon-columns"></i>专栏</a></li>
-        <li><a href="{{site.url~'/partners'}}"><i class="icon icon-touch text-2xl"></i>合作</a></li>
-        <li><a href="{{site.url~'/about-us'}}"><i class="icon icon-people"></i>关于我们</a></li>
+        {% for item in main_nav.items %}
+          <li class="{{ item.classes|join(' ') }}">
+            <a href="{{ item.link }}"><i class="icon {{ item.link == site.link~'/' ? 'icon-home' : item.master_object.meta('_page_icon') }}"></i>{{ item.title|striptags }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
 
     {# social media links #}
     <div class="social-icons flex justify-center text-2xl">
-      <a href="{{theme.uri~'/dist/images/qr-code.png'}}"><i class="icon icon-wechat hover:text-green-800"></i></a>
+      <a href="{{theme.uri ~ '/dist/images/qr-code.png'}}"><i class="icon icon-wechat hover:text-green-800"></i></a>
       <a href="https://www.weibo.com/neucssa"><i class="icon icon-sina-weibo hover:text-red-600"></i></a>
       <a href="https://www.facebook.com/NEUCSSA"><i class="icon icon-facebook hover:text-blue-700"></i></a>
       <a href="https://www.instagram.com/nucssa/"><i class="icon icon-instagram hover:text-pink-700"></i></a>

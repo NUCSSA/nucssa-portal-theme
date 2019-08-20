@@ -12,6 +12,19 @@ module.exports = {
     colors: {
       transparent: 'transparent',
 
+      nucssa: {
+        'standard': '#d92110',
+        'title': '#d92110c2',
+        'subtitle': '#d92110ad',
+        'section-title': '#601c16',
+        'nav-item': '#601C16',
+        'nav-item-highlight': '#D92110C2',
+        'view-all-btn': '#FA6980',
+        'tooltip-1': '#601c16',
+        'tooltip-2': '#43425D',
+        'tooltip-3': '#D92110',
+      },
+
       black: '#000',
       white: '#fff',
 
@@ -36,9 +49,6 @@ module.exports = {
         700: '#c53030',
         800: '#9b2c2c',
         900: '#742a2a',
-        'nucssa': '#d92110',
-        'nucssa-title': '#d92110c2',
-        'nucssa-subtitle': '#d92110ad',
       },
       orange: {
         100: '#fffaf0',
@@ -139,11 +149,15 @@ module.exports = {
       '5': '1.25rem',
       '6': '1.5rem',
       '8': '2rem',
+      '9': '2.25rem',
       '10': '2.5rem',
+      '11': '2.75rem',
       '12': '3rem',
       '16': '4rem',
       '20': '5rem',
       '24': '6rem',
+      '26': '6.5rem',
+      '28': '7rem',
       '32': '8rem',
       '40': '10rem',
       '48': '12rem',
@@ -182,6 +196,7 @@ module.exports = {
       default: '1px',
       '0': '0',
       '2': '2px',
+      '3': '3px',
       '4': '4px',
       '8': '8px',
     },
@@ -257,6 +272,7 @@ module.exports = {
       ],
     },
     fontSize: {
+      xxs: '0.625rem',
       xs: '0.75rem',
       sm: '0.875rem',
       base: '1rem',

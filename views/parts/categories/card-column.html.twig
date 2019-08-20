@@ -1,0 +1,23 @@
+{% if post.video %} {# if post has video #}
+  <article class="card column has-video" style="background-image: url('{{(post.thumbnail.src ?? placeholder_thumbnail_url)|resize(730)}}')">
+    <div class="card-content-wrapper">
+      <a class="post-content" href="{{post.link}}">
+        <i class="icon icon-play"></i>
+      </a>
+    </div>
+  </article>
+{% else %}
+  <article class="card column" style="background-image: url('{{(post.thumbnail.src ?? placeholder_thumbnail_url)|resize(730)}}')">
+    <div class="card-content-wrapper">
+      <a class="post-content" href="{{post.link}}">
+        <h2 class="title">{{post.title | title}}</h2>
+        <p class="subtitle">{{ post.preview.length(30).read_more(null) | raw }}</p>
+      </a>
+      <a href="{{ post.author.link }}"
+        class="author-thumbnail tooltip"
+        aria-label="{{ post.author.name }}" data-balloon-pos="down"
+        style="background-image:url('{{ post.author.avatar }}')"
+      ></a>
+    </div>
+  </article>
+{% endif %}

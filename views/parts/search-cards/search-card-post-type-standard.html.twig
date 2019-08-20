@@ -1,0 +1,10 @@
+<article class="card-post {{ post.class }}">
+  <img class="post-thumbnail" src="{{ post.thumbnail.src ?? fallback_thumbnail }}" alt="Post Thumbnail"/>
+  <div class="post-detail">
+    <h4 class="post-title"><a href="{{ post.link }}">{{ post.title | raw }}</a></h4>
+    <div class="post-meta">
+      <div class="post-date">{{ post.date | time_ago }}</div>
+    </div>
+    <p class="post-excerpt">{{ post.content | truncate(20) | raw }}</p>
+  </div>
+</article>

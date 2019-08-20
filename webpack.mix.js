@@ -26,18 +26,34 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
  | https://laravel-mix.com/
  */
 const postCss = mix.inProduction() ? [tailwindcss, purgecss] : [tailwindcss];
-mix.sass('assets/scss/style.scss', 'dist/css/')
-    .sass('assets/scss/style-editor.scss', 'dist/css/')
-    .js('assets/js/main.js', 'dist/js/main.v1.js')
-    .copyDirectory('assets/images/', 'dist/images/')
-    .browserSync({
-      proxy: 'wp.localhost',
-      files: [ '*.php', '*.twig', '*.js', 'dist/', 'inc/', 'views/'],
-      open: false,
-      ghostMode: false,
-    })
-    .options({
-      processCssUrls: false,
-      postCss,
-    })
-    .sourceMaps(false, 'eval-source-map');
+mix.webpackConfig({
+  externals: {
+    '@wordpress/element': ['wp', 'element'],
+    '@wordpress/plugins': ['wp', 'plugins'],
+    '@wordpress/blocks': ['wp', 'blocks'],
+    '@wordpress/edit-post': ['wp', 'editPost'],
+    '@wordpress/i18n': ['wp', 'i18n'],
+    '@wordpress/editor': ['wp', 'editor'],
+    '@wordpress/components': ['wp', 'components'],
+    '@wordpress/blob': ['wp', 'blob'],
+    '@wordpress/data': ['wp', 'data'],
+    '@wordpress/html-entities': ['wp', 'htmlEntities'],
+    '@wordpress/compose': ['wp', 'compose'],
+  }
+})
+.sass('assets/scss/style.scss', 'dist/css/')
+.sass('assets/scss/style-editor.scss', 'dist/css/')
+.react('assets/js/gutenberg/editor-extension/featured-posts.js', 'dist/js/featured-posts.js')
+.js('assets/js/main.js', 'dist/js/main.js')
+.copyDirectory('assets/images/', 'dist/images/')
+.browserSync({
+  proxy: 'wp.localhost',
+  files: [ '*.php', '*.twig', '*.js', 'dist/', 'inc/', 'views/'],
+  open: false,
+  ghostMode: false,
+})
+.options({
+  processCssUrls: false,
+  postCss,
+})
+.sourceMaps(false, 'eval-source-map');
