@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends "base.twig" %}
 
 {% block content %}
 {# FEATURED POSTS CAROUSEL #}
@@ -24,7 +24,7 @@
       {% for post in latest_posts %}
 
         {# apply diff card template for diff post categories #}
-        {% include ["parts/categories/card-#{post.category.slug}.html.twig", 'parts/categories/card-standard.html.twig'] %}
+        {% include ["parts/categories/card-#{post.category.slug}.twig", 'parts/categories/card-standard.twig'] %}
 
       {% endfor %}
     </div>
@@ -40,7 +40,7 @@
       {% for post in most_viewed %}
 
         {# apply diff card template for diff post categories #}
-        {% include ["parts/categories/card-#{post.category.slug}.html.twig", 'parts/categories/card-standard.html.twig'] %}
+        {% include ["parts/categories/card-#{post.category.slug}.twig", 'parts/categories/card-standard.twig'] %}
 
       {% endfor %}
     </div>

@@ -10,7 +10,7 @@
 </head>
 <body class="{{body_class}}">
   <header>
-    {% include "parts/navbar.html.twig" %}
+    {% include "parts/navbar.twig" %}
   </header>
 
   {# main OR main + aside #}
@@ -18,7 +18,7 @@
     <main></main>
   {% endblock %}
 
-  {% include 'parts/footer.html.twig' %}
+  {% include 'parts/footer.twig' %}
 
   {# <footer> #}
   {{ function('wp_footer') }}

@@ -1,5 +1,5 @@
 <nav id="globalnav" class="sticky w-screen z-10">
-  {% include 'parts/nav-panel.html.twig' %}
+  {% include 'parts/nav-panel.twig' %}
   <div class="navbar container py-1 flex items-center justify-between">
 
     {# nav toggle #}
@@ -38,13 +38,25 @@
 
     {# user profile toggle #}
     {% if function('is_user_logged_in') %}
-      <a href="{{ function('get_edit_profile_url') }}"
+      {# <a href="{{ function('get_dashboard_url') }}"
         class="nav-group mr-0 user-profile"
-        aria-label="My Profile"
-        data-balloon-pos="left"
+        data-toggle="user-profile-dropdown"
       >
         <img class="rounded-full" src="{{user.avatar({size: 30})}}" alt="current user avatar">
-      </a>
+      </a> #}
+      <button
+        class="nav-group mr-0 user-profile"
+        data-toggle="user-profile-dropdown"
+      >
+        <img class="rounded-full" src="{{user.avatar({size: 30})}}" alt="current user avatar">
+      </button>
+      <div id="user-profile-dropdown" data-dropdown data-hover="true" data-hover-pane="true" data-close-on-click="true">
+        <ul>
+          <li><a href="{{ function('get_dashboard_url') }}">Dashboard</a></li>
+          <li><a href="{{ function('get_edit_profile_url') }}">User Profile</a></li>
+          <li><a href="{{ function('wp_logout_url', site.link)|raw }}">Logout</a></li>
+        </ul>
+      </div>
     {% else %}
       <a class="nav-group btn btn-login" data-opentab="#login">Log In</a>
     {% endif %}

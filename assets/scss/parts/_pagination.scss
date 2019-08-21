@@ -2,9 +2,11 @@
 
   .pagination{
     @apply flex items-center justify-center;
-    li + li {@apply ml-4;}
+    li {@apply mx-1;}
+    .page-number,
+    .btn {@apply py-1 px-3;}
     .page-number.current {@apply font-bold;}
     .page-number:not(.current):hover,
-    .btn:not(.disabled):hover {@apply text-nucssa-title font-bold;}
+    .btn:not(.disabled):hover {@apply bg-gray-300;}
   }
 }
