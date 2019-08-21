@@ -29,4 +29,4 @@ $context['authors'] = array_map(function($ID){return new User($ID);}, $author_id
 // 2. normal results ( activities and columns )
 $context['posts'] = new PostQuery();
 
-Timber::render('search.html.twig', $context);
+Timber::render('search.twig', $context);

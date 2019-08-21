@@ -1,6 +1,10 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss')('./tailwind.config.js');
 const purgecssWordpress = require('purgecss-with-wordpress');
+const purgecssFlickity = {
+  whitelist: ['dot'],
+  whitelistPatterns: [/^flickity/, ],
+}
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
     './*.php',
@@ -9,8 +13,9 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     'assets/js/**/*.jsx',
     'views/**/*.twig',
   ],
-  whitelist: purgecssWordpress.whitelist,
-  whitelistPatterns: purgecssWordpress.whitelistPatterns,
+  whitelist: [...purgecssWordpress.whitelist, ...purgecssFlickity.whitelist],
+  whitelistPatterns: [...purgecssWordpress.whitelistPatterns, ...purgecssFlickity.whitelistPatterns],
+  defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
 });
 
 /*
@@ -39,6 +44,7 @@ mix.webpackConfig({
     '@wordpress/data': ['wp', 'data'],
     '@wordpress/html-entities': ['wp', 'htmlEntities'],
     '@wordpress/compose': ['wp', 'compose'],
+    'jquery': ['window', 'jQuery'],
   }
 })
 .sass('assets/scss/style.scss', 'dist/css/')
@@ -49,7 +55,7 @@ mix.webpackConfig({
 .browserSync({
   proxy: 'wp.localhost',
   files: [ '*.php', '*.twig', '*.js', 'dist/', 'inc/', 'views/'],
-  open: false,
+  open: 'ui',
   ghostMode: false,
 })
 .options({

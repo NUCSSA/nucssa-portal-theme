@@ -1,0 +1,9 @@
+/**
+ * Configures and Loads Up Required Foundation 6 CSS Components
+ */
+@import './foundation-settings';
+@import '~foundation-sites/scss/foundation';
+
+*[data-dropdown] {
+  @include dropdown-container;
+}

@@ -53,6 +53,13 @@
 
   }
 
+  // User Profile
+  #user-profile-dropdown {@apply px-0 py-1;
+    li a {@apply block px-4 py-2 text-nucssa-standard;
+      &:hover {@apply bg-gray-200;}
+    }
+  }
+
 
   /**
    * Screen-md:
@@ -107,12 +114,8 @@
       }
     }
 
-
-    // User Profile Icon
     .user-profile {
-      img {
-        width: 45px;
-      }
+      img {width: 45px;}
     }
   }
 }

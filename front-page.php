@@ -30,4 +30,4 @@ $context['most_viewed'] = new PostQuery([
   'post_type' => 'post',
 ]);
 $context['placeholder_thumbnail_url'] = NUCSSA_THEME_DIR_URL.'/dist/images/placeholder-thumbnail.jpg';
-Timber::render('front-page.html.twig', $context);
+Timber::render('front-page.twig', $context);
