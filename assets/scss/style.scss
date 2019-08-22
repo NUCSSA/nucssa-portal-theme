@@ -5,7 +5,7 @@
 @import 'parts/variables';
 @import "parts/foundation";
 @import 'parts/btn';
-@import 'parts/form-input';
+@import 'parts/form-control';
 @import 'parts/carousel';
 @import 'parts/tooltip';
 @import 'parts/container';
@@ -15,6 +15,7 @@
 @import 'parts/footer.scss';
 @import 'parts/search-result-page';
 @import 'parts/pagination';
+@import 'parts/login-modal';
 
 html {@apply bg-gray-100;
 

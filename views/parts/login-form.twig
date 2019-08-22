@@ -1,0 +1,41 @@
+{%
+  set args = {
+    redirect: current_url,
+    form_id: 'loginform',
+    label_username: __('Username'),
+    label_password: __('Password'),
+    label_remember: __('Remember Me'),
+    label_log_in: __('Log In'),
+    id_username: 'user_login',
+    id_password: 'user_pass',
+    id_remember: 'rememberme',
+    id_submit: 'wp-submit',
+    remember: true,
+    value_username: '',
+    value_remember: false,
+  }
+%}
+
+<form id="{{ args.form_id }}" action="{{ function('site_url', 'wp-login.php', 'login_post')|e('esc_url') }}" method="post">
+  {{ ''|apply_filters('login_form_top', args) }}
+  <div class="form-control">
+    <label for="{{ args.id_username|e('esc_html') }}"><i class="icon icon-nucssa"></i></label>
+    <input type="text" name="log" id="{{ args.id_username|e('esc_html') }}" value="{{ args.value_username|e('esc_html') }}" placeholder="{{ args.label_username|e('esc_html') }}" />
+  </div>
+  <div class="form-control">
+    <label for="{{ args.id_password|e('esc_html') }}"><i class="icon icon-lock-open"></i></label>
+    <input type="password" name="pwd" id="{{ args.id_password|e('esc_html') }}" placeholder="{{ args.label_password|e('esc_html') }}" />
+  </div>
+  {{ ''|apply_filters('login_form_middle', args) }}
+  {% if args.remember %}
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="rememberme" id="{{ args.id_remember|e('esc_html') }}" value="forever" {{ args.value_remember ?? 'checked="checked"' }}/>
+        {{ args.label_remember|e('esc_html') }}
+      </label>
+    </div>
+  {% endif %}
+  <input type="submit" value="{{ args.label_log_in|e('esc_html') }}" />
+  <input type="hidden" name="redirect_to" value="{{ args.redirect|e('esc_url') }}"/>
+  {{ ''|apply_filters('login_form_bottom', args) }}
+</form>

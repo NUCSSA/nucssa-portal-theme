@@ -9,7 +9,7 @@ body.search main {
    * Search Bar
    */
   .searchbar { @apply flex items-center;
-    .form-input {
+    .form-control {
       @apply w-full;
       input {@apply w-full border-nucssa-standard border border-solid rounded-full text-lg py-2 outline-none;}
       label, input {@apply text-nucssa-subtitle font-bold;}

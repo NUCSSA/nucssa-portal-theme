@@ -9,6 +9,7 @@ class TimberMods {
     $context['main_nav'] = new \Timber\Menu('main-nav');
     $context['policy_menu'] = new \Timber\Menu('policy-menu');
     $context['footer_nav'] = new \Timber\Menu('footer-nav');
+    $context['current_url'] = \Timber\URLHelper::get_current_url();
 
     return $context;
   }

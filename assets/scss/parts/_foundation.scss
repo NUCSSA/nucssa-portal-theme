@@ -3,7 +3,14 @@
  */
 @import './foundation-settings';
 @import '~foundation-sites/scss/foundation';
+@import '~motion-ui/src/motion-ui';
+// @import '~foundation-sites/dist/css/foundation.min.css';
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 *[data-dropdown] {
   @include dropdown-container;
 }
+
+@include foundation-reveal;

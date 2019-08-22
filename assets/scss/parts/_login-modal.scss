@@ -1,0 +1,19 @@
+#login-modal {@apply relative rounded-lg;
+  .header {@apply text-center font-bold text-xl text-nucssa-tooltip-2;}
+  .close-button {@apply absolute text-2xl; right: 10px; top: 0;}
+  form {@apply text-gray-700;
+    .form-control {@apply relative my-4 flex items-center;
+      label {@apply absolute text-center; left: 5px; width: 1.5rem; color: rgba(180, 180, 180, 0.719);}
+      input {@apply block w-full pl-9 border border-gray-400 border-solid rounded leading-loose;}
+      input:focus {@apply border-blue-400 outline-none shadow-inner;}
+    }
+    .checkbox {@apply text-sm;
+      input {@apply mr-1;}
+      label:hover {@apply cursor-pointer;}
+    }
+    input[type="submit"] {@apply block bg-blue-500 text-white py-2 px-4 rounded mt-3 mb-2 w-full;}
+    input[type="submit"]:hover {@apply bg-blue-700 cursor-pointer;}
+  }
+}
+
+#login-modal:focus {@apply outline-none;}
