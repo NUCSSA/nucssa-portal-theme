@@ -54,6 +54,10 @@
   }
 
   // User Profile
+  .btn-login {
+    @apply text-nucssa-nav-item font-bold;
+    &:hover {@apply text-nucssa-tooltip-2;}
+  }
   #user-profile-dropdown {@apply px-0 py-1;
     li a {@apply block px-4 py-2 text-nucssa-standard;
       &:hover {@apply bg-gray-200;}
@@ -107,9 +111,10 @@
 
       &.active {
         @apply flex-grow;
-        .form-input {
-          @apply w-full;
-          input {@apply w-full border-nucssa-standard border border-solid rounded-full text-lg py-2 outline-none;}
+        .form-control {
+          @apply w-full relative flex items-center;
+          input {@apply w-full border-nucssa-standard border border-solid rounded-full text-lg py-2 pl-9 outline-none;}
+          .icon {@apply absolute; left: .8rem;}
         }
       }
     }

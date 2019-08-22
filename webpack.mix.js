@@ -56,7 +56,7 @@ mix.webpackConfig({
   proxy: 'wp.localhost',
   files: [ '*.php', '*.twig', '*.js', 'dist/', 'inc/', 'views/'],
   open: 'ui',
-  ghostMode: false,
+  ghostMode: false, // mirror clicks, scrolls & form inputs on all connected devices
 })
 .options({
   processCssUrls: false,

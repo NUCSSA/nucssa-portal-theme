@@ -29,7 +29,7 @@
 
       {# Searchbar #}
       <form class="nav-group searchbar" action="{{ site.link }}">
-        <div class="form-input">
+        <div class="form-control">
           <label class="icon icon-search btn nav-link" for="searchbar"></label>
           <input type="text" id="searchbar" name="s" value="{{ request.get.s }}" />
         </div>
@@ -58,9 +58,15 @@
         </ul>
       </div>
     {% else %}
-      <a class="nav-group btn btn-login" data-opentab="#login">Log In</a>
+      <button class="btn btn-login" data-open="login-modal">Log In</button>
+      <div id="login-modal" class="reveal" data-reveal>
+        <h3 class="header">Admin Login</h3>
+        {% include "parts/login-form.twig" %}
+        <button class="close-button" data-close aria-label="Close reveal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     {% endif %}
-
 
   </div>
 </nav>
