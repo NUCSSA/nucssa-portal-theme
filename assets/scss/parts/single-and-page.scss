@@ -12,6 +12,7 @@ body.page {
       .post-thumbnail-image {@apply mx-auto; width: 100%; max-width: 1200px;}
     }
 
+
     .post-title {@apply text-4xl mt-6; color: rgba(0,0,0,.84);}
     .post-excerpt {@apply text-2xl opacity-50 font-normal;}
     .post-meta {@apply flex items-center text-sm mt-5;
@@ -25,7 +26,10 @@ body.page {
         }
       }
     }
-    .post-content {@apply mt-8;}
+    .post-content {@apply mt-8 max-w-full;
+      & > * {@apply mx-auto max-w-2xl;}
+      .alignfull {@apply w-full max-w-full;}
+    }
     .post-tags {@apply mt-8;
       ul {@apply flex;
         li a {@apply rounded text-sm font-normal; color: rgba(0,0,0,.54); background-color: rgba(0,0,0,.05); padding: 5px 10px;}
