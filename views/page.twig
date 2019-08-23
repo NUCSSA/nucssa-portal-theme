@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<main class="content-wrapper">
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+      {# thumbnail #}
+      <div class="post-thumbnail">
+        <div class="post-thumbnail-bg-layer" style="background-image: url('{{ post.thumbnail.src|resize(1200, 300) }}')"></div>
+        <img class="post-thumbnail-image" src="{{ post.thumbnail.src|resize(1200, 300) }}"></img>
+      </div>
+      {# title #}
+      <h1 class="post-title">{{ post.title|striptags|raw }}</h1>
+
+      {# excerpt #}
+      {% if function('has_excerpt') %}
+        <div class="post-excerpt">
+          {{ post.preview.read_more(null)|raw }}
+        </div>
+      {% endif %}
+
+      {# meta #}
+      <div class="post-meta">
+        {# author #}
+        <a href="{{ post.author.link }}" class="left">
+          <img class="author-thumbnail" src="{{ post.author.avatar({size: 48}) }}" alt="Author Profile Image">
+        </a>
+        <div class="right">
+          <a href="{{ post.author.link }}" class="author-name">{{ post.author.name }}</a>
+          <div class="post-date">
+            {# date #}
+            {% set dateformat = post.date('Y') == 'now'|date('Y') ? 'M j': 'M j, Y' %}
+            <span class="date">{{ post.date(dateformat) }}</span> • {{ post.category }}
+            {# edit link #}
+            {% if user %} • <a href="{{ post.edit_link|raw }}">{{ _e('edit') }}</a>{% endif %}
+          </div>
+        </div>
+      </div>
+
+      {# content #}
+      <div class="post-content">
+        {{post.content|raw}}
+      </div>
+
+      {# tags #}
+      <div class="post-tags">
+        <ul>
+        {% for tag in post.tags %}
+          <li><a href="{{ tag.link }}">{{ tag }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+
+      {# share buttons #}
+      {# TODO #}
+
+    </article>
+
+  </main><!-- /content-wrapper -->
+{% endblock %}

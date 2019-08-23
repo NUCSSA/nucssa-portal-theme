@@ -1,0 +1,37 @@
+/**
+ * Shared Stylings for Single Post Or Page
+ */
+body.single,
+body.page {
+  article {@apply pb-10;
+    // Default max-width for all content elements
+    & > * {@apply mx-auto max-w-2xl;}
+
+    .post-thumbnail {@apply relative max-w-full; // unset default max-width
+      .post-thumbnail-bg-layer {@apply absolute w-full h-full; filter: blur(8px); z-index: -1; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); background-size: 70%;}
+      .post-thumbnail-image {@apply mx-auto; width: 100%; max-width: 1200px;}
+    }
+
+    .post-title {@apply text-4xl mt-6; color: rgba(0,0,0,.84);}
+    .post-excerpt {@apply text-2xl opacity-50 font-normal;}
+    .post-meta {@apply flex items-center text-sm mt-5;
+      .left {
+        .author-thumbnail {@apply rounded-full;}
+      }
+      .right {@apply ml-3 flex flex-col;
+        .author-name {color: rgba(0,0,0,.84);}
+        .post-date {@apply opacity-50 uppercase;
+          .date {@apply normal-case;}
+        }
+      }
+    }
+    .post-content {@apply mt-8;}
+    .post-tags {@apply mt-8;
+      ul {@apply flex;
+        li a {@apply rounded text-sm font-normal; color: rgba(0,0,0,.54); background-color: rgba(0,0,0,.05); padding: 5px 10px;}
+        li + li {@apply ml-2;}
+      }
+    }
+  }
+
+}
