@@ -61,7 +61,17 @@
       <button class="btn btn-login" data-open="login-modal">Log In</button>
       <div id="login-modal" class="reveal" data-reveal>
         <h3 class="header">Admin Login</h3>
+        <p class="text-center text-sm text-gray-600 mt-4 mb-6">
+          All members of NUCSSA should be able to login with your NUCSSA account.
+          <br />
+          If you don't know your username, contact NUCSSA IT to set one up for you.
+        </p>
         {% include "parts/login-form.twig" %}
+        <p class="text-center text-sm text-gray-500 mt-4">
+          Don't remember your password?
+          <br />
+          Don't worry, <a class="text-blue-400" href="https://wiki.nucssa.org/forgotuserpassword.action">reset it here</a>.
+        </p>
         <button class="close-button" data-close aria-label="Close reveal" type="button">
           <span aria-hidden="true">&times;</span>
         </button>
