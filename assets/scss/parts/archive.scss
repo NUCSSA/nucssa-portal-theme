@@ -1,6 +1,7 @@
 // The Home/Blog Page Styling
-body.blog {
-  .page-heading-title {@apply uppercase text-center text-4xl font-medium mt-8 text-nucssa-tooltip-2;
+body.blog,
+body.archive {
+  .archive-heading-title {@apply uppercase text-center text-4xl font-medium mt-8 text-nucssa-tooltip-2;
     &::after {content: ''; height: 5px; background-color: #efeff0; @apply block mt-3 mb-10; }
   }
 
@@ -21,4 +22,8 @@ body.blog {
       }
     }
   }
+}
+
+body.archive.author {
+  .archive-heading-title::after {@apply mt-10;}
 }
