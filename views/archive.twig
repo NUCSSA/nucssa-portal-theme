@@ -1,13 +1,9 @@
-{# BLOG Listing Page #}
-
 {% extends "base.twig" %}
 
 {% block content %}
   <main class="container">
     {# header #}
-    {% if function('is_home') %}
-      <h1 class="page-heading-title">All Articles</h1>
-    {% endif %}
+    {% block heading %}{% endblock %}
 
     {# Posts #}
     <div class="content-wrapper">
@@ -31,7 +27,7 @@
             {# Byline: link to author, category #}
             <div class="post-meta">
               {% set dateformat = post.date('Y') == 'now'|date('Y') ? 'M j': 'M j, Y' %}
-              By <a class="author-name" href="{{ post.author.link }}">{{ post.author.name }}</a> | <span class="date">{{ post.date(dateformat) }}</span> | <a class="category" href="{{ post.category.link }}">{{ post.category }}</a>
+              By <a class="author-name" href="{{ post.author.link }}">{{ post.author.name }}</a> • <span class="date">{{ post.date(dateformat) }}</span> • <a class="category" href="{{ post.category.link }}">{{ post.category }}</a>
             </div>
           </div>
 
