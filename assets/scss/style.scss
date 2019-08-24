@@ -4,6 +4,7 @@
 @import url(https://fonts.nucssa.org/nucssa-icon-font/style.css);
 @import 'parts/variables';
 @import "parts/foundation";
+@import "parts/global";
 @import 'parts/btn';
 @import 'parts/form-control';
 @import 'parts/carousel';
@@ -17,6 +18,7 @@
 @import 'parts/pagination';
 @import 'parts/login-modal';
 @import 'parts/single-and-page.scss';
+@import 'parts/home.scss';
 
 html {@apply bg-gray-100;
 

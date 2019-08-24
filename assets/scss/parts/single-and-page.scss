@@ -2,7 +2,7 @@
  * Shared Stylings for Single Post Or Page
  */
 body.single,
-body.page {
+body.page:not(.home) {
   article {@apply pb-10;
     // Default max-width for all content elements
     & > * {@apply mx-auto max-w-2xl;}
