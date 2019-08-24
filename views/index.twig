@@ -1,1 +1,49 @@
+{# BLOG Listing Page #}
+
 {% extends "base.twig" %}
+
+{% block content %}
+  <main class="container">
+    {# header #}
+    {% if function('is_home') %}
+      <h1 class="page-heading-title">All Articles</h1>
+    {% endif %}
+
+    {# Posts #}
+    <div class="content-wrapper">
+
+      {% for post in posts %}
+        <article class="post-type-{{ post.post-type }}">
+          <div class="left">
+            {# thumbnail: 222x125 #}
+            <a class="post-thumbnail" href="{{ post.link }}">
+              <img src="{{ post.thumbnail ? post.thumbnail.src|resize(222,125) : fallback_thumbnail|resize(222,125) }}" alt="Post Thumbnail" />
+            </a>
+          </div>
+
+          <div class="right">
+            {# title: link #}
+            <h4 class="post-title"><a href="{{ post.link }}">{{ post.title|striptags|raw }}</a></h4>
+
+            {# Excerpt: link #}
+            <a href="{{ post.link }}" class="post-excerpt">{{ post.preview.length(30).read_more(null)|raw }}</a>
+
+            {# Byline: link to author, category #}
+            <div class="post-meta">
+              {% set dateformat = post.date('Y') == 'now'|date('Y') ? 'M j': 'M j, Y' %}
+              By <a class="author-name" href="{{ post.author.link }}">{{ post.author.name }}</a> | <span class="date">{{ post.date(dateformat) }}</span> | <a class="category" href="{{ post.category.link }}">{{ post.category }}</a>
+            </div>
+          </div>
+
+        </article>
+
+      {% endfor %}
+
+      {# Pagination #}
+      {% include 'parts/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
+    </div>
+
+  </main>
+
+{% endblock %}

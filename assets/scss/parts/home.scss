@@ -1,0 +1,24 @@
+// The Home/Blog Page Styling
+body.blog {
+  .page-heading-title {@apply uppercase text-center text-4xl font-medium mt-8 text-nucssa-tooltip-2;
+    &::after {content: ''; height: 5px; background-color: #efeff0; @apply block mt-3 mb-10; }
+  }
+
+  article + article {@apply mt-4;}
+  article:last-of-type {@apply mb-8;}
+  article {@apply mx-auto w-full flex;
+    @screen md {@apply max-w-2xl;}
+
+    .left {@apply flex-grow-0 flex-shrink-0;}
+    .right {@apply border-t border-gray-400 border-solid w-full pt-2 pl-2;
+      .post-title {@apply font-bold leading-tight; color: rgba(0,0,0,.84);}
+      .post-excerpt {@apply font-normal text-sm block; color: rgba(0,0,0,.54);}
+      .post-meta {@apply font-light mt-1; color: rgba(0,0,0,.58); font-size: .85rem;
+        .author-name,
+        .category {@apply text-nucssa-standard;
+          &:hover {filter: contrast(2);}
+        }
+      }
+    }
+  }
+}
