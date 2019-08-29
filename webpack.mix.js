@@ -49,7 +49,7 @@ mix.webpackConfig({
 })
 .sass('assets/scss/style.scss', 'dist/css/')
 .sass('assets/scss/style-editor.scss', 'dist/css/')
-.react('assets/js/gutenberg/editor-extension/featured-posts.js', 'dist/js/featured-posts.js')
+// .react('assets/js/gutenberg/editor-extension/featured-posts.js', 'dist/js/featured-posts.js')
 .js('assets/js/main.js', 'dist/js/main.js')
 .copyDirectory('assets/images/', 'dist/images/')
 .browserSync({
