@@ -46,4 +46,27 @@ body.search main {
       .post-excerpt {@apply mt-4 text-gray-900;}
     }
   }
+
+  // Clubs
+  .post-type-club {@apply my-2 w-full self-stretch;
+    @screen lg {width: 49%;}
+
+    .club-info {@apply relative flex items-center;
+      min-height: 12rem;
+      border-radius: 32px;background: rgba(255, 255, 255, 0.78);box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16);
+      margin-left: 30px;
+
+      .thumbnail {@apply absolute bg-cover bg-center border-none; width: 150px;height: 150px;border-radius: 20px;box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.16);
+        left: -30px;
+      }
+      .detail {@apply pr-6 py-6; padding-left: 150px; font-family: Roboto;
+        .workshop-schedule {@apply font-bold text-xs;color: rgba(39, 34, 34, 0.62);}
+        .club-name {@apply font-bold text-nucssa-title;}
+        .excerpt {@apply font-light mt-2 text-sm mx-auto; color: #272222;}
+        .read-more {@apply inline-block uppercase text-white text-xs font-semibold rounded-full px-5 py-2 mt-3;
+          background: linear-gradient(135deg, #f7b333, #f00c2f);
+        }
+      }
+    }
+  }
 }
