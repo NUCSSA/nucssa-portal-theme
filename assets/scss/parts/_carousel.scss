@@ -1,12 +1,11 @@
 @import '~flickity/dist/flickity';
 .carousel {
-  .carousel-card {
+  .carousel-card {@apply relative;
     width: 100%;
     padding-top: 49%;
-    @screen sm {padding-top: 22.8%;}
-    background-position: 50% 50% !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    @screen sm {padding-top: 20.8%;}
+
+    img {@apply absolute h-full top-0;}
   }
 
   .flickity-button {
