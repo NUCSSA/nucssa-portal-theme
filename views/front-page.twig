@@ -6,10 +6,17 @@
   {% if featured_posts is not empty %}
     <div class="carousel js-flickity" data-flickity-options='{"cellAlign": "center", "contain": true, "wrapAround": true}'>
       {% for post in featured_posts %}
-        <a class="carousel-card"
-          href="{{ post.link }}"
-          style="background: url('{{ post.thumbnail.src ?? placeholder_thumbnail_url }}')"
-        >
+        <a class="carousel-card" href="{{ post.link }}">
+          {% set banner_image_wide_src = post.meta('_banner_image_wide') ? Image(post.meta('_banner_image_wide')).src : (post.thumbnail.src ?? placeholder_thumbnail_url) %}
+          {% set banner_image_narrow_src = post.meta('_banner_image_narrow') ? Image(post.meta('_banner_image_narrow')).src : (post.thumbnail.src ?? placeholder_thumbnail_url) %}
+          <img class="object-cover object-center w-full"
+            src="{{ banner_image_wide_src }}"
+            alt="Banner Image"
+            sizes="(max-width: 640px) 640px,
+                   (min-width: 641px) 1920px"
+            srcset="{{ banner_image_narrow_src }} 640w,
+                    {{ banner_image_wide_src }} 1920w"
+          />
           <div class="gradient-cover"></div>
         </a>
       {% endfor %}
