@@ -1,10 +1,20 @@
-<article class="card-post {{ post.class }}">
-  <img class="post-thumbnail" src="{{ post.thumbnail.src ?? fallback_thumbnail }}" alt="Post Thumbnail"/>
-  <div class="post-detail">
-    <h4 class="post-title"><a href="{{ post.link }}">{{ post.title | raw }}</a></h4>
-    <div class="post-meta">
-      <div class="post-type">{{ post.type.labels.name }}</div>
+<article class="post-type-{{ post.post_type }} {{ post.class }}">
+  <div class="club-info">
+    {# thumbnail #}
+    <div class="thumbnail" style="background-image: url('{{ post.thumbnail.src|resize(220*3) }}')"></div>
+    <div class="detail">
+      {# workshop schedule #}
+      {% set workshop = function('json_decode', post.meta('_workshop_schedule')) %}
+      {% if workshop %}
+        <div class="workshop-schedule">{{ workshop.location }} | {{ workshop.days|join(', ') }} | {{ workshop.time }}</div>
+      {% endif %}
+      {# club name #}
+      <div class="club-name"><a href="{{ post.link }}">{{ post.title|striptags|raw }}</a></div>
+      {# excerpt #}
+      <div class="excerpt">{{ post.preview.length(30).read_more(null)|raw }}</div>
+      {# READ MORE button #}
+      <a href="{{ post.link }}" class="read-more">read more</a>
     </div>
-    <p class="post-excerpt">{{ post.content | truncate(20) | raw }}</p>
   </div>
+
 </article>
