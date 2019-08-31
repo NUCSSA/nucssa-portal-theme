@@ -1,0 +1,10 @@
+body.search,
+body.error404 {
+  main .searchbar {
+    .form-control {@apply relative flex items-center;
+      input {@apply w-full border-nucssa-standard border border-solid rounded-full text-lg py-2 pl-9 outline-none;}
+      label, input {@apply text-nucssa-subtitle font-bold;}
+      .icon {@apply absolute; left: .8rem;}
+    }
+  }
+}

@@ -11,14 +11,18 @@
 @import 'parts/tooltip';
 @import 'parts/container';
 @import 'parts/layout';
+@import 'parts/searchbar';
+@import 'parts/pagination';
+@import 'parts/login-modal';
 @import 'parts/navbar.scss';
 @import 'parts/front-page-cards.scss';
 @import 'parts/footer.scss';
+
+// Pages:
 @import 'parts/search-result-page';
-@import 'parts/pagination';
-@import 'parts/login-modal';
 @import 'parts/single-and-page.scss';
 @import 'parts/archive.scss';
+@import 'parts/404.scss';
 
 html {@apply bg-gray-100;
 

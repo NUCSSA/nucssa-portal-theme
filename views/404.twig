@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<main>
+	<div>
+    <div class="title">404</div>
+    <div class="hint">
+      走丢了吗? <br />
+      尝试一下搜索吧~
+    </div>
+  </div>
+  <div class="img">
+    <img src="{{ theme.uri ~ '/dist/images/404-dog.png' }}" alt="404 image">
+  </div>
+  {# searchbar has class 'searchbar' #}
+  {% include "parts/searchbar.twig" with {inputId: '404-searchbar'} %}
+</main>
+{% endblock %}
