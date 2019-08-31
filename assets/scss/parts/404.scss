@@ -1,0 +1,9 @@
+/**
+ * Styles for 404 Page
+ */
+body.error404 main {@apply mx-auto flex flex-wrap items-center justify-between py-8 px-4; max-width: 660px;
+  .title {@apply font-bold text-6xl; color: rgba(0,0,0,.76); font-family: Roboto;}
+  .hint {@apply font-bold text-4xl text-nucssa-title;}
+  img {@apply w-64;}
+  .searchbar {@apply w-full mt-4 self-start;}
+}
