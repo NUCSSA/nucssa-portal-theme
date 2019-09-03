@@ -20,20 +20,8 @@
 
       {# meta #}
       <div class="post-meta">
-        {# author #}
-        <a href="{{ post.author.link }}" class="left">
-          <img class="author-thumbnail" src="{{ post.author.avatar({size: 48}) }}" alt="Author Profile Image">
-        </a>
-        <div class="right">
-          <a href="{{ post.author.link }}" class="author-name">{{ post.author.name }}</a>
-          <div class="post-date">
-            {# date #}
-            {% set dateformat = post.date('Y') == 'now'|date('Y') ? 'M j': 'M j, Y' %}
-            <span class="date">{{ post.date(dateformat) }}</span> • {{ post.category }}
-            {# edit link #}
-            {% if user %} • <a href="{{ post.edit_link|raw }}">{{ _e('edit') }}</a>{% endif %}
-          </div>
-        </div>
+        {# edit link #}
+        {% if user %}<a href="{{ post.edit_link|raw }}">{{ _e('Edit') }}</a>{% endif %}
       </div>
 
       {# content #}

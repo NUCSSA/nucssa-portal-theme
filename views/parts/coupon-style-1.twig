@@ -1,0 +1,36 @@
+<div class="card-container">
+  <div class="upper">
+    <div class="business-name">{{post.title}}</div>
+    <div class="coupon-literal">coupon</div>
+  </div>
+  <div class="lower ">
+    {% if post.thumbnail %}
+      <img src={{post.thumbnail.src('post-thumbnail')}} alt="商家logo" />
+    {% endif %}
+
+    <div class="details">
+      <div class="terms">
+        <div class="header">terms and conditions</div>
+        <div class="content">{{post.meta('terms')}}</div>
+      </div>
+      <div class="contact">
+        <table>
+          {% if post.meta('phone') %}
+            <tr><th class="label">phone:</th><td class="content">{{post.meta('phone')}}</td></tr>
+          {% endif %}
+          {% if post.meta('website') %}
+            <tr><th class="label">website:</th><td class="content"><a href={{function('set_url_scheme', post.meta('website'), 'http')}}>{{post.meta('website')}}</a></td></tr>
+          {% endif %}
+          {% if post.meta('address') %}
+            <tr><th class="label">address:</th><td class="content">{{post.meta('address')}}</td></tr>
+          {% endif %}
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="coupon-amount-container">
+    <div class="outline"></div>
+    <div class="coupon-amount">{{post.meta('amount')}}</div>
+    <div class="off-literal">off</div>
+  </div>
+</div>
