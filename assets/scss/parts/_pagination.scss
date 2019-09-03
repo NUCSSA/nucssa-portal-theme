@@ -4,7 +4,7 @@
     @apply flex items-center justify-center;
     li {@apply mx-1;}
     .page-number,
-    .btn {@apply py-1 px-3;}
+    .btn a {@apply py-1 px-3;}
     .page-number.current {@apply font-bold text-gray-700;}
     .page-number:not(.current):hover,
     .btn:not(.disabled):hover {@apply bg-gray-300;}

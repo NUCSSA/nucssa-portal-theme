@@ -28,7 +28,7 @@
                     </li>
                 {% else %}
                     <li class="current">
-                        <span class="{{ page.class }}">{{ page.title }}</span>
+                        <span class="{{ page.class }}">{{ page.title|raw }}</span>
                     </li>
                 {% endif %}
             {% endfor %}

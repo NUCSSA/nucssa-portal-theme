@@ -23,7 +23,9 @@ body.search main {
   }
 
   // Posts Section
-  .posts {@apply flex flex-wrap justify-between;}
+  .posts {@apply flex flex-wrap justify-center;
+    & > * {@apply mx-1;}
+  }
   .card-post {@apply flex items-center shadow-md my-2 w-full;
     @screen lg {width: 49%;}
 
@@ -58,3 +60,6 @@ body.search main {
     }
   }
 }
+
+// Coupons
+.post-type-coupon {@apply my-2 w-full self-stretch;}

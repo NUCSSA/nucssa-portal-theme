@@ -5,7 +5,7 @@
     {% endif %}
     <div class="coupon-amount">{{post.meta('amount')}}</div>
     <div class="off-literal">off</div>
-    <div class="business-name">{{post.title}}</div>
+    <div class="business-name">{{post.title|striptags|raw}}</div>
     <div class="terms-header">terms and conditions</div>
     <div class="terms-content">{{post.meta('terms')}}</div>
     {% if post.meta('website') %}
