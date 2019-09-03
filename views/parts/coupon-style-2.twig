@@ -1,0 +1,23 @@
+<div class="card-container">
+  <div class="left">
+    {% if post.meta('phone') %}
+      <div class="phone">{{post.meta('phone')}}</div>
+    {% endif %}
+    <div class="coupon-amount">{{post.meta('amount')}}</div>
+    <div class="off-literal">off</div>
+    <div class="business-name">{{post.title}}</div>
+    <div class="terms-header">terms and conditions</div>
+    <div class="terms-content">{{post.meta('terms')}}</div>
+    {% if post.meta('website') %}
+      <div class="website"><a href={{function('set_url_scheme', post.meta('website'), 'http')}}>{{post.meta('website')}}</a></div>
+    {% endif %}
+
+    <div class="address">{{post.meta('address')}}</div>
+  </div>
+  <div class="right">
+    {% if post.thumbnail %}
+      {% set thumbnail_url = post.thumbnail.src('post-thumbnail') %}
+      <div class="logo" style="background: url('{{ thumbnail_url }}')"></div>
+    {% endif %}
+  </div>
+</div>
