@@ -21,7 +21,15 @@
       <ul>
         {% for item in main_nav.items %}
           <li class="{{ item.classes|join(' ') }}">
-            <a href="{{ item.link }}"><i class="icon {{ item.link == site.link~'/' ? 'icon-home' : item.master_object.meta('_page_icon') }}"></i>{{ item.title|striptags }}</a>
+            {% if item.link == site.link~'/' %}
+              {% set icon = 'icon-home' %}
+            {% elseif item.link == column_archive_url %}
+              {% set icon = 'icon-columns' %}
+            {% else %}
+              {% set icon = item.master_object.meta('_page_icon') %}
+            {% endif %}
+
+            <a href="{{ item.link }}"><i class="icon {{ icon }}"></i>{{ item.title|striptags }}</a>
           </li>
         {% endfor %}
       </ul>
