@@ -3,7 +3,9 @@
 {% block content %}
   <main class="container">
     {# header #}
-    {% block heading %}{% endblock %}
+    {% block heading %}
+      <h1 class="archive-heading-title">{{ title }}</h1>
+    {% endblock %}
 
     {# Posts #}
     <div class="content-wrapper">
