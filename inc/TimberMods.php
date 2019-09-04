@@ -10,6 +10,7 @@ class TimberMods {
     $context['policy_menu'] = new \Timber\Menu('policy-menu');
     $context['footer_nav'] = new \Timber\Menu('footer-nav');
     $context['current_url'] = \Timber\URLHelper::get_current_url();
+    $context['column_archive_url'] = (new \Timber\Term('column', 'category'))->link;
 
     return $context;
   }

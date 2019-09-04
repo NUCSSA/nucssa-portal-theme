@@ -19,13 +19,7 @@
     <div class="flex-grow hidden md:flex justify-end mx-8">
 
       {# menu items #}
-      <ul class="nav-group nav-menu">
-        {% for item in main_nav.items %}
-          <li class="{{ item.classes|join(' ') }}">
-            <a class="nav-link" href="{{ item.link }}">{{ item.title|striptags }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+      {% include "parts/menu.twig" with {'menu': main_nav.items} %}
 
       {# Searchbar #}
       <form class="nav-group searchbar" action="{{ site.link }}">
