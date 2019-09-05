@@ -105,7 +105,7 @@
         .nav-menu {@apply hidden;}
       }
       li.menu-item-has-children:hover {@apply relative;
-        .nav-menu {@apply block absolute shadow-md bg-white py-2; left: 0;
+        .nav-menu {@apply block absolute shadow-md bg-white py-2 mr-0; left: 0; transform: translateX(-25%); width: max-content;
           li + li {@apply ml-0 border-t border-gray-400 border-solid;}
           .nav-link {@apply inline-block px-8 py-1;}
         }
