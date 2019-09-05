@@ -30,6 +30,15 @@
             {% endif %}
 
             <a href="{{ item.link }}"><i class="icon {{ icon }}"></i>{{ item.title|striptags }}</a>
+            {% if item.children %}
+              <ul>
+                {% for item in item.children %}
+                  <li class="{{ item.classes|join(' ') }}">
+                    <a href="{{ item.link }}">{{ item.title|striptags }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </li>
         {% endfor %}
       </ul>

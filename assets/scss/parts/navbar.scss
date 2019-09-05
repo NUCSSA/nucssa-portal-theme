@@ -100,6 +100,16 @@
       &.search-activated {
         display: none;
       }
+
+      li.menu-item-has-children {
+        .nav-menu {@apply hidden;}
+      }
+      li.menu-item-has-children:hover {@apply relative;
+        .nav-menu {@apply block absolute shadow-md bg-white py-2; left: 0;
+          li + li {@apply ml-0 border-t border-gray-400 border-solid;}
+          .nav-link {@apply inline-block px-8 py-1;}
+        }
+      }
     }
 
 
@@ -152,6 +162,12 @@
       .icon.icon-home {font-size: 2rem;}
       .icon.icon-basketball-hoop1 {font-size: 2rem;}
       .icon.icon-touch {font-size: 2rem;}
+    }
+
+    li.menu-item-has-children ul {@apply ml-20 mt-2;
+      & > li + li {@apply mt-2;}
+
+      & > li {@apply list-square;}
     }
   }
 
