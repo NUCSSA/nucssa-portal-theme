@@ -10,7 +10,7 @@ class Scripts {
   }
 
   private static function frontendStyles() {
-    $version = WP_DEBUG ? time() : false;
+    $version = WP_DEBUG ? time() : 'v0.1';
     wp_enqueue_style('nucssa_theme_frontend', NUCSSA_THEME_DIR_URL.'/dist/css/style.css', [], $version);
   }
   private static function frontendScripts() {
