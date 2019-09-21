@@ -9,18 +9,26 @@
   {{ function('wp_head') }}
 </head>
 <body class="{{body_class}}">
-  <header>
-    {% include "parts/navbar.twig" %}
-  </header>
 
-  {# main OR main + aside #}
-  {% block content %}
-    <main></main>
-  {% endblock %}
+  <div class="off-canvas position-left" id="off-canvas-nav-panel" data-off-canvas data-content-scroll="false">
+    {% include 'parts/nav-panel.twig' %}
+  </div>
 
-  {% include 'parts/footer.twig' %}
+  <div class="off-canvas-content canvas" data-off-canvas-content>
+    <header>
+      {% include "parts/navbar.twig" %}
+    </header>
 
-  {# <footer> #}
-  {{ function('wp_footer') }}
+    {# main OR main + aside #}
+    {% block content %}
+      <main></main>
+    {% endblock %}
+
+    {% include 'parts/footer.twig' %}
+
+    {# <footer> #}
+    {{ function('wp_footer') }}
+  </div>
+
 </body>
 </html>
