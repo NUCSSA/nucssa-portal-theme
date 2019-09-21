@@ -17,7 +17,7 @@ const purgecssFoundation6 = {
   ],
 };
 const purgecssWordpressAdditional = {
-  whitelist: ['wp-admin', ],
+  whitelist: ['wp-admin', 'alignfull'],
   whitelistPatterns: [
     /^rtl(-.*)?$/,
     /^home(-.*)?$/,
