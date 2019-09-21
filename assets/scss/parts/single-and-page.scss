@@ -5,9 +5,9 @@ body.single,
 body.page:not(.home) {
   article {@apply pb-10;
     // Default max-width for all content elements
-    & > * {@apply mx-auto max-w-2xl;}
+    & > * {@apply mx-auto max-w-2xl px-6;}
 
-    .post-thumbnail {@apply relative max-w-full; // unset default max-width
+    .post-thumbnail {@apply relative max-w-full px-0; // unset default max-width
       .post-thumbnail-bg-layer {@apply absolute w-full h-full; filter: blur(8px); z-index: -1; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); background-size: 70%;}
       .post-thumbnail-image {@apply mx-auto; width: 100%; max-width: 1200px;}
     }
@@ -23,12 +23,18 @@ body.page:not(.home) {
         .author-name {color: rgba(0,0,0,.84);}
         .post-date {@apply opacity-50 uppercase;
           .date {@apply normal-case;}
+          .categories {@apply inline-block;
+            li {@apply inline-block;}
+            li + li::before { @apply mr-1 inline-block;
+              content: '|';
+            }
+          }
         }
       }
     }
-    .post-content {@apply mt-8 max-w-full;
-      & > * {@apply mx-auto max-w-2xl;}
-      .alignfull {@apply w-full max-w-full;}
+    .post-content {@apply mt-8 max-w-full px-0;
+      & > * {@apply mx-auto max-w-2xl px-6;}
+      .alignfull {@apply w-full max-w-full px-0;}
     }
     .post-tags {@apply mt-8;
       ul {@apply flex;
@@ -45,7 +51,7 @@ body.page:not(.home) {
  */
 body.single-club {
   main.content-wrapper {background: linear-gradient(135deg, #f7b333, #f00c2f);
-    .club-info {@apply mt-16; max-width: 950px;}
+    .club-info {@apply mt-16 px-3; max-width: 950px;}
   }
 }
 
@@ -58,5 +64,7 @@ body.single-club {
  * Coupons Index Page
  */
 body.page-template-page-template-coupons {
-  main {@apply py-16;}
+  main {@apply py-16;
+    .wp-block-nucssa-coupon {@apply mx-4 pb-10;}
+  }
 }

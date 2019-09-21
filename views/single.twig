@@ -29,7 +29,13 @@
           <div class="post-date">
             {# date #}
             {% set dateformat = post.date('Y') == 'now'|date('Y') ? 'M j': 'M j, Y' %}
-            <span class="date">{{ post.date(dateformat) }}</span> • <a href="{{ post.category.link }}">{{ post.category }}</a>
+            <span class="date">{{ post.date(dateformat) }}</span>
+             •
+            <ul class="categories">
+              {% for cat in post.categories %}
+                <li><a href="{{ cat.link }}">{{ cat.name }}</a></li>
+              {% endfor %}
+            </ul>
             {# edit link #}
             {% if user %} • <a href="{{ post.edit_link|raw }}">{{ _e('edit') }}</a>{% endif %}
           </div>

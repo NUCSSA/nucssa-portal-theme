@@ -5,7 +5,7 @@
     <div class="flex flex-wrap items-center justify-center">
       {# Posts #}
       {% for post in posts %}
-        <article class="mx-4 post-type-coupon wp-block-nucssa-coupon {{ post.meta('style') }}">
+        <div class="post-type-coupon wp-block-nucssa-coupon {{ post.meta('style') }}">
           <div class="coupon-preview">
 
             {% set style = post.meta('style') ?? 'is-style-style-1-pattern-1' %}
@@ -17,7 +17,7 @@
             {% endif %}
 
           </div>
-        </article>
+        </div>
 
       {% endfor %}
 
