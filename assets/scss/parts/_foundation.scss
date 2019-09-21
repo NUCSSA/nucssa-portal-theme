@@ -9,8 +9,18 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-*[data-dropdown] {
+[data-dropdown] {
   @include dropdown-container;
 }
 
 @include foundation-reveal;
+
+// Off-Canvas https://foundation.zurb.com/sites/docs/off-canvas.html
+@include off-canvas-basics;
+[data-off-canvas] {
+  @include off-canvas-base;
+  @include off-canvas-position;
+}
+[data-off-canvas-content] {
+  @include off-canvas-content;
+}

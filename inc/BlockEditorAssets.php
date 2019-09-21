@@ -8,7 +8,9 @@ class BlockEditorAssets {
   }
 
   private static function genericBlockEditorAssets() {
-    $version = WP_DEBUG ? time() : false;
-    wp_enqueue_style( 'nucssa_theme_block_editor_assets', NUCSSA_THEME_DIR_URL.'/dist/css/style-editor.css', [], $version);
+    $fpath = NUCSSA_THEME_DIR_PATH . '/dist/css/style-editor.css';
+    $furl = NUCSSA_THEME_DIR_URL . '/dist/css/style-editor.css';
+    $version = filemtime($fpath);
+    wp_enqueue_style( 'nucssa_theme_block_editor_assets', $furl, [], $version);
   }
 }

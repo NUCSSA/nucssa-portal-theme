@@ -10,12 +10,16 @@ class Scripts {
   }
 
   private static function frontendStyles() {
-    $version = WP_DEBUG ? time() : 'v0.1';
-    wp_enqueue_style('nucssa_theme_frontend', NUCSSA_THEME_DIR_URL.'/dist/css/style.css', [], $version);
+    $fpath = NUCSSA_THEME_DIR_PATH . '/dist/css/style.css';
+    $furl = NUCSSA_THEME_DIR_URL . '/dist/css/style.css';
+    $version = filemtime($fpath);
+    wp_enqueue_style('nucssa_theme_frontend', $furl, [], $version);
   }
   private static function frontendScripts() {
-    $version = WP_DEBUG ? time() : false;  // busting browser cache during development
-    wp_enqueue_script( 'nucssa_theme_frontend', NUCSSA_THEME_DIR_URL.'/dist/js/main.js', ['jquery'], $version );
+    $fpath = NUCSSA_THEME_DIR_PATH . '/dist/js/main.js';
+    $furl = NUCSSA_THEME_DIR_URL . '/dist/js/main.js';
+    $version = filemtime($fpath);
+    wp_enqueue_script( 'nucssa_theme_frontend', $furl, ['jquery'], $version );
   }
   private static function browserSync() {
     add_action('wp_print_scripts', function() {

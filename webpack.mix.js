@@ -4,8 +4,19 @@ const purgecssWordpress = require('purgecss-with-wordpress');
 const purgecssFlickity = {
   whitelist: ['dot'],
   whitelistPatterns: [/^flickity/, ],
-}
-const purgecssAdditional = {
+};
+const purgecssFoundation6 = {
+  whitelist: ['js-off-canvas-overlay', 'is-closed', 'is-open', 'is-visible', 'is-closable', 'data-content-scroll'],
+  whitelistPatterns: [
+    /^is-open(-.*)?$/,
+    /^is-overlay(-.*)?$/,
+    /^has-transition(-.*)?$/,
+    /^has-position(-.*)?$/,
+    /^is-off-canvas(-.*)?$/,
+    /^is-transition(-.*)?$/,
+  ],
+};
+const purgecssWordpressAdditional = {
   whitelist: ['wp-admin', ],
   whitelistPatterns: [
     /^rtl(-.*)?$/,
@@ -66,8 +77,8 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     'assets/js/**/*.jsx',
     'views/**/*.twig',
   ],
-  whitelist: [...purgecssWordpress.whitelist, ...purgecssFlickity.whitelist, ...purgecssAdditional.whitelist],
-  whitelistPatterns: [...purgecssWordpress.whitelistPatterns, ...purgecssFlickity.whitelistPatterns, ...purgecssAdditional.whitelistPatterns],
+  whitelist: [...purgecssWordpress.whitelist, ...purgecssFlickity.whitelist, ...purgecssWordpressAdditional.whitelist, ...purgecssFoundation6.whitelist],
+  whitelistPatterns: [...purgecssWordpress.whitelistPatterns, ...purgecssFlickity.whitelistPatterns, ...purgecssWordpressAdditional.whitelistPatterns, ...purgecssFoundation6.whitelistPatterns],
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
 });
 
