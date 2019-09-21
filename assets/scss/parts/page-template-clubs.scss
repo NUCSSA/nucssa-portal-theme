@@ -1,0 +1,18 @@
+body.page-template-page-template-clubs {
+  main {@apply py-16; background: linear-gradient(135deg, #f7b333, #f00c2f);
+    .container {@apply flex flex-wrap justify-center items-stretch max-w-full;}
+    article {@apply mx-0 my-2; max-width: 550px; padding-bottom: 0 !important;
+      .club-info {
+        .content {
+          .read-more {@apply inline-block uppercase text-white text-xs font-semibold rounded-full px-5 py-2 mt-3;
+            background: linear-gradient(135deg, #f7b333, #f00c2f);
+          }
+        }
+      }
+    }
+
+    @screen md {
+      article {@apply mx-4;}
+    }
+  }
+}
