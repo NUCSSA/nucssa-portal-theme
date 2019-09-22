@@ -51,7 +51,9 @@
         </ul>
       </div>
     {% else %}
-      <button class="btn btn-login" data-open="login-modal">Log In</button>
+      <button class="btn btn-login" data-open="login-modal">
+        <img class="rounded-full" src="{{ login_placeholder_avatar }}" alt="log in" width=30 />
+      </button>
       <div id="login-modal" class="reveal" data-reveal>
         <h3 class="header">Admin Login</h3>
         <p class="text-center text-sm text-gray-600 mt-4 mb-6">
