@@ -38,7 +38,7 @@
         <img class="rounded-full" src="{{user.avatar({size: 30})}}" alt="current user avatar">
       </a> #}
       <button
-        class="nav-group mr-0 user-profile"
+        class="nav-group mr-0 user-profile focus:outline-none"
         data-toggle="user-profile-dropdown"
       >
         <img class="rounded-full" src="{{user.avatar({size: 30})}}" alt="current user avatar">
@@ -51,7 +51,7 @@
         </ul>
       </div>
     {% else %}
-      <button class="btn btn-login" data-open="login-modal">
+      <button class="btn btn-login focus:outline-none" data-open="login-modal">
         <img class="rounded-full" src="{{ login_placeholder_avatar }}" alt="log in" width=30 />
       </button>
       <div id="login-modal" class="reveal" data-reveal>
