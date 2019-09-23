@@ -19,5 +19,5 @@ add_action('wp_enqueue_scripts', ['nucssa_theme\inc\Scripts', 'init']);  // enqu
 add_filter('the_title', ['nucssa_theme\inc\SearchHighlight', 'titleHighlight']);
 add_filter('the_excerpt', ['nucssa_theme\inc\SearchHighlight', 'contentHighlight']);
 add_filter('the_content', ['nucssa_theme\inc\SearchHighlight', 'contentHighlight']);
-// add_action('enqueue_block_assets', 'nucssa_theme_block_assets');
-add_action('enqueue_block_editor_assets', ['nucssa_theme\inc\BlockEditorAssets', 'init']);
+add_action('enqueue_block_assets', ['nucssa_theme\inc\Scripts', 'blockAssets']);
+add_action('enqueue_block_editor_assets', ['nucssa_theme\inc\Scripts', 'blockEditorAssets']);

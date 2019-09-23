@@ -9,6 +9,21 @@ class Scripts {
     if (WP_DEBUG) self::browserSync();
   }
 
+  public static function blockAssets() {
+    $fpath = NUCSSA_THEME_DIR_PATH . '/dist/css/style-shared.css';
+    $furl = NUCSSA_THEME_DIR_URL . '/dist/css/style-shared.css';
+    $version = filemtime($fpath);
+    wp_enqueue_style('nucssa_theme_block_shared_assets', $furl, [], $version);
+  }
+
+  public static function blockEditorAssets() {
+    $fpath = NUCSSA_THEME_DIR_PATH . '/dist/css/style-editor.css';
+    $furl = NUCSSA_THEME_DIR_URL . '/dist/css/style-editor.css';
+    $version = filemtime($fpath);
+    wp_enqueue_style( 'nucssa_theme_block_editor_assets', $furl, [], $version);
+  }
+
+
   private static function frontendStyles() {
     $fpath = NUCSSA_THEME_DIR_PATH . '/dist/css/style.css';
     $furl = NUCSSA_THEME_DIR_URL . '/dist/css/style.css';
