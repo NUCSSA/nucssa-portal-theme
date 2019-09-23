@@ -5,6 +5,8 @@
     <div class="post-meta">
       <div class="post-date">{{ post.date | time_ago }}</div>
     </div>
-    <p class="post-excerpt">{{ post.content | truncate(20) | raw }}</p>
+    <p class="post-excerpt">
+      {{ post.preview.chars(80).read_more(null).end(' ...') | raw }}
+    </p>
   </div>
 </article>
