@@ -24,7 +24,9 @@
             <h4 class="post-title"><a href="{{ post.link }}">{{ post.title|striptags|raw }}</a></h4>
 
             {# Excerpt: link #}
-            <a href="{{ post.link }}" class="post-excerpt">{{ post.preview.length(30).read_more(null)|raw }}</a>
+            <a href="{{ post.link }}" class="post-excerpt">
+              {{ post.preview.chars(80).read_more(null).end(' ...') | raw }}
+            </a>
 
             {# Byline: link to author, category #}
             <div class="post-meta">
