@@ -14,7 +14,7 @@
       {# excerpt #}
       {% if function('has_excerpt') %}
         <div class="post-excerpt">
-          {{ post.preview.read_more(null)|raw }}
+          {{ post.preview.read_more(null)|wpautop|raw }}
         </div>
       {% endif %}
 
