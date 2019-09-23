@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'parts/variables';
+
+.editor-styles-wrapper .block-editor-writing-flow,
+.post-content {@apply font-sans;
+  h1, h2, h3, h4, h5, h6 {@apply my-3;}
+  h1 {@apply text-5xl;}
+  h2 {@apply text-4xl;}
+  h3 {@apply text-3xl;}
+  h4 {@apply text-2xl;}
+  h5 {@apply text-xl;}
+  h6 {@apply text-lg;}
+
+  img {@apply border-none;}
+  p {@apply my-5;}
+  ul, ol {@apply ml-5 pl-5 mb-5;}
+  ol {@apply list-decimal;}
+  ul {@apply list-square;}
+  li {@apply leading-relaxed;}
+}
+
+body article .post-content {
+  ul, ol {@apply pl-16 mb-5 #{!important};}
+  blockquote {@apply pl-10 #{!important};}
+}
