@@ -17,6 +17,12 @@
         </div>
       </div>
 
+      {# meta #}
+      <div class="post-meta">
+        {# edit link #}
+        {% if user %}<a href="{{ post.edit_link|raw }}">{{ _e('Edit') }}</a>{% endif %}
+      </div>
+
       {# content #}
       <div class="post-content">
         {{post.content|raw}}
