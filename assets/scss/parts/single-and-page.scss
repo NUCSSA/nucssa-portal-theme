@@ -35,7 +35,10 @@ body.page:not(.home) {
     .post-content {@apply mt-8 max-w-full px-0;
       & > * {@apply mx-auto max-w-2xl px-6;}
       .alignfull {@apply w-full max-w-full px-0;}
-      .alignwide {@apply max-w-4xl;}
+      .alignwide {@apply max-w-full px-0;
+        @screen md {@apply max-w-5xl px-6;}
+      }
+
     }
     .post-tags {@apply mt-8;
       ul {@apply flex;
