@@ -6,7 +6,7 @@
       <div class="club-info">
         <div class="content">
           {# thumbnail #}
-          <div class="thumbnail" style="background-image: url('{{ post.thumbnail.src("extra_large") }}')"></div>
+          <div class="thumbnail" style="background-image: url('{{ post.thumbnail.src("large") }}')"></div>
           <div class="detail">
             {% if workshop %}
               <div class="workshop-schedule">{{ workshop.location }} | {{ workshop.days|join(', ') }} | {{ workshop.time }}</div>
