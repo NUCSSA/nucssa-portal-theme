@@ -55,6 +55,8 @@ class ThemeSetup {
   private static function thumbnails(){
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size(439, 292);
+
+    add_image_size( 'extra_large', 1920);
   }
 
   private static function gutenbergSupport(){
