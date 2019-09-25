@@ -9,7 +9,7 @@
           <div class="club-info">
             <div class="content">
               {# thumbnail #}
-              <div class="thumbnail" style="background-image: url('{{ post.thumbnail.src|resize(660) }}')"></div>
+              <div class="thumbnail" style="background-image: url('{{ post.thumbnail.src("medium_large") }}')"></div>
               <div class="detail">
                 {# workshop schedule #}
                 {% set workshop = function('json_decode', post.meta('_workshop_schedule')) %}
