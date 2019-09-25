@@ -29,11 +29,11 @@ body.search main {
   .card-post {@apply flex items-center shadow-md my-2 w-full;
     @screen lg {width: 49%;}
 
-    .post-thumbnail {@apply h-48 w-48 object-cover;}
+    .post-thumbnail {@apply h-48 w-48 object-cover; max-width: 40%;}
     .post-detail {@apply self-start py-2 px-4;
       .post-title {@apply font-bold text-nucssa-title;}
-      .post-meta {@apply text-sm italic text-gray-700;}
-      .post-excerpt {@apply mt-4 text-gray-900;}
+      .post-meta {@apply text-xs italic text-gray-700;}
+      .post-excerpt {@apply mt-4 text-sm; color: rgba(0,0,0,.74);}
     }
   }
 

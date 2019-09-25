@@ -15,7 +15,7 @@
           <div class="left">
             {# thumbnail: 222x125 #}
             <a class="post-thumbnail" href="{{ post.link }}">
-              <img src="{{ post.thumbnail ? post.thumbnail.src|resize(222,125) : fallback_thumbnail|resize(222,125) }}" alt="Post Thumbnail" />
+              <img src="{{ post.thumbnail ? post.thumbnail.src|resize(222,125, 'center') : fallback_thumbnail|resize(222,125, 'center') }}" alt="Post Thumbnail" />
             </a>
           </div>
 
@@ -25,7 +25,7 @@
 
             {# Excerpt: link #}
             <a href="{{ post.link }}" class="post-excerpt">
-              {{ post.preview.chars(80).read_more(null).end(' ...') | raw }}
+              {{ post.preview.chars(80).read_more(null) | raw }}
             </a>
 
             {# Byline: link to author, category #}

@@ -1,10 +1,11 @@
 .pagination-block {@apply p-3 mb-6;
 
   .pagination{
-    @apply flex items-center justify-center;
-    li {@apply mx-1;}
+    @apply flex items-center justify-center max-w-full;
     .page-number,
-    .btn a {@apply py-1 px-3;}
+    .btn a {@apply py-1 px-2;
+      @screen sm {@apply px-3;}
+    }
     .page-number.current {@apply font-bold text-gray-700;}
     .page-number:not(.current):hover,
     .btn:not(.disabled):hover {@apply bg-gray-300;}
