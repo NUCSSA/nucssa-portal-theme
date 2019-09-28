@@ -8,6 +8,24 @@
     img {@apply absolute h-full top-0;}
   }
 
+  .carousel-card.has-video {
+    .icon {
+      @apply text-4xl text-white rounded-full flex items-center justify-center absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 6rem; height: 6rem; padding-left: .56rem;
+      border: solid 2px white;
+      transition: all .3s;
+    }
+  }
+  .carousel-card.has-video:hover {
+    .icon {
+      border-color: darken($color: white, $amount: .3);
+      transform: translate3d(-50%, -50%, 0) scale(1.15);
+    }
+  }
+
   .flickity-button {
     visibility: hidden;
 
