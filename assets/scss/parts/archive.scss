@@ -19,9 +19,16 @@ body.archive {
       .post-meta {@apply font-light mt-1 text-xs; color: rgba(0,0,0,.58);
         @screen sm {font-size: .85rem;}
         .author-name,
-        .category {@apply text-nucssa-standard;
+        .categories li {@apply text-nucssa-standard;
           &:hover {filter: contrast(2);}
         }
+        .categories {@apply inline-block;
+          li {@apply inline-block;}
+          li + li::before { @apply mr-1 inline-block;
+            content: '|';
+          }
+        }
+
       }
     }
   }
