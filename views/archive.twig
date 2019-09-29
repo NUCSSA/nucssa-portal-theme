@@ -15,7 +15,7 @@
           <div class="left">
             {# thumbnail: 222x125 #}
             <a class="post-thumbnail" href="{{ post.link }}">
-              <img src="{{ post.thumbnail ? post.thumbnail.src|resize(222,125, 'center') : fallback_thumbnail|resize(222,125, 'center') }}" alt="Post Thumbnail" />
+              <img src="{{ post.thumbnail ? post.thumbnail.src('archive_list_thumbnail') : fallback_thumbnail|resize(222,125, 'center') }}" alt="Post Thumbnail" />
             </a>
           </div>
 

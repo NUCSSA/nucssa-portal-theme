@@ -1,5 +1,8 @@
 body.page-template-page-template-clubs {
-  main {@apply py-16; background: linear-gradient(135deg, #f7b333, #f00c2f);
+  main {@apply pt-8 pb-16; background: linear-gradient(135deg, #f7b333, #f00c2f);
+    .title {@apply my-4 text-center font-bold text-3xl text-white;
+      @screen md {@apply text-4xl;}
+    }
     .container {@apply flex flex-wrap justify-center items-stretch max-w-full px-3;}
     article {@apply mx-0 my-2 pb-0 #{!important}; max-width: 550px;
       .club-info {@apply px-0;

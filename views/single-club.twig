@@ -6,13 +6,13 @@
       <div class="club-info">
         <div class="content">
           {# thumbnail #}
-          <div class="thumbnail" style="background-image: url('{{ post.thumbnail.src("extra_large") }}')"></div>
+          <div class="thumbnail" style="background-image: url('{{ post.thumbnail.src("banner_desktop") }}')"></div>
           <div class="detail">
             {% if workshop %}
               <div class="workshop-schedule">{{ workshop.location }} | {{ workshop.days|join(', ') }} | {{ workshop.time }}</div>
             {% endif %}
             <div class="club-name">{{ post.title|striptags|raw }}</div>
-            <div class="excerpt">{{ post.preview.read_more(null)|raw }}</div>
+            <div class="excerpt">{{ post.preview.chars(150).read_more(null)|raw }}</div>
           </div>
         </div>
       </div>

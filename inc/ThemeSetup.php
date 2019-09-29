@@ -56,7 +56,10 @@ class ThemeSetup {
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size(439, 292);
 
-    add_image_size( 'extra_large', 1920);
+    add_image_size( 'banner_desktop', 1920);
+    add_image_size( 'banner_mobile', 640);
+    add_image_size( 'in_post_thumbnail', 1200, 300, true);
+    add_image_size( 'archive_list_thumbnail', 222, 125, true);
   }
 
   private static function gutenbergSupport(){

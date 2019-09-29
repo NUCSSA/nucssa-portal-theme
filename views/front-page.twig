@@ -7,8 +7,8 @@
     <div class="carousel js-flickity" data-flickity-options='{"cellAlign": "center", "contain": true, "wrapAround": true}'>
       {% for post in featured_posts %}
         <a class="carousel-card {{ post.video ? 'has-video' }}" href="{{ post.link }}">
-          {% set banner_image_desktop_src = post.meta('_banner_image_desktop') ? Image(post.meta('_banner_image_desktop')).src|resize(1920) : (post.thumbnail.src ? post.thumbnail.src|resize(1920) : placeholder_thumbnail_url) %}
-          {% set banner_image_mobile_src = post.meta('_banner_image_mobile') ? Image(post.meta('_banner_image_mobile')).src|resize(640) : (post.thumbnail.src ? post.thumbnail.src|resize(640) : placeholder_thumbnail_url) %}
+          {% set banner_image_desktop_src = post.meta('_banner_image_desktop') ? Image(post.meta('_banner_image_desktop')).src('banner_desktop') : (post.thumbnail.src ? post.thumbnail.src('banner_desktop') : placeholder_thumbnail_url) %}
+          {% set banner_image_mobile_src = post.meta('_banner_image_mobile') ? Image(post.meta('_banner_image_mobile')).src('banner_mobile') : (post.thumbnail.src ? post.thumbnail.src('banner_mobile') : placeholder_thumbnail_url) %}
           <img class="object-cover object-center w-full"
           src="{{ banner_image_desktop_src }}"
           alt="Banner Image"

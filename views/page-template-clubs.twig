@@ -2,6 +2,7 @@
 
 {% block content %}
   <main>
+    <div class="title">NUCSSA旗下社团</div>
     <div class="container">
       {# Posts #}
       {% for post in posts %}
@@ -19,7 +20,7 @@
                 {# club name #}
                 <div class="club-name"><a href="{{ post.link }}">{{ post.title|striptags|raw }}</a></div>
                 {# excerpt #}
-                <div class="excerpt">{{ post.preview.length(30).read_more(null)|raw }}</div>
+                <div class="excerpt">{{ post.preview.chars(150).read_more(null)|raw }}</div>
                 {# READ MORE button #}
                 <a href="{{ post.link }}" class="read-more">read more</a>
               </div>
