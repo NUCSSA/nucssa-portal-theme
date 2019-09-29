@@ -8,9 +8,9 @@
         <div class="post-type-coupon wp-block-nucssa-coupon {{ post.meta('style') }}">
           <div class="coupon-preview">
 
-            {% set style = post.meta('style') ?? 'is-style-style-1-pattern-1' %}
+            {% set style = post.meta('style') ?: 'is-style-style-1-pattern-1' %}
 
-            {% if 'is-style-style-1' in style %}
+            {% if 'style-1' in style %}
               {% include "parts/coupon-style-1.twig" %}
             {% else %}
               {% include "parts/coupon-style-2.twig" %}
