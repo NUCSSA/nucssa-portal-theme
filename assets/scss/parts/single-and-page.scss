@@ -13,8 +13,8 @@ body.page:not(.home) {
     }
 
 
-    .post-title {@apply text-4xl mt-6; color: rgba(0,0,0,.84);}
-    .post-excerpt {@apply text-2xl opacity-50 font-normal;}
+    .post-title {@apply mt-6 font-medium; color: rgba(0,0,0,.84); font-size: 1.75rem;}
+    .post-excerpt {@apply text-lg opacity-50 font-normal;}
     .post-meta {@apply flex items-center text-sm mt-5;
       .left {
         .author-thumbnail {@apply rounded-full;}
