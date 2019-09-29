@@ -11,7 +11,7 @@
     <div class="card-content-wrapper">
       <a class="post-content" href="{{post.link}}">
         <h2 class="title">{{post.title|striptags|raw|title}}</h2>
-        <p class="subtitle">{{ post.preview.length(30).read_more(null) | raw }}</p>
+        <p class="subtitle">{{ post.preview.chars(100).read_more(null) | raw }}</p>
       </a>
       <a href="{{ post.author.link }}"
         class="author-thumbnail tooltip"
