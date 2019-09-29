@@ -71,6 +71,7 @@ const purgecssWordpressAdditional = {
     /^editor-/,
     /^block-/,
     /^hover/,
+    /^has/,
     /^is-open/,
     /^is-style/,
     /^reveal-overlay$/,
