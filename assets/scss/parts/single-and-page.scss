@@ -9,7 +9,7 @@ body.page:not(.home) {
 
     .post-thumbnail {@apply relative max-w-full px-0; // unset default max-width
       .post-thumbnail-bg-layer {@apply absolute w-full h-full; filter: blur(8px); z-index: -1; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); background-size: 70%;}
-      .post-thumbnail-image {@apply mx-auto; width: 100%; max-width: 1200px;}
+      .post-thumbnail-image {@apply mx-auto object-cover; width: 100%; max-width: 1200px; max-height: 300px;}
     }
 
 
