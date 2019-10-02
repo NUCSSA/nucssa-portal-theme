@@ -11,13 +11,10 @@ body.archive {
     @screen md {@apply max-w-2xl;}
 
     .left {@apply flex-grow-0 flex-shrink-0; max-width: 40%;}
-    .right {@apply border-t border-gray-400 border-solid w-full pt-2 pl-2 flex flex-col justify-between overflow-hidden;
-      .post-title {@apply font-bold leading-tight; color: rgba(0,0,0,.84);}
-      .post-excerpt {@apply font-normal text-xs block mt-1 truncate; color: rgba(0,0,0,.54);
-        @screen sm {@apply text-sm;}
-      }
+    .right {@apply border-t border-gray-400 border-solid w-full pt-1 pl-2 flex flex-col justify-between overflow-hidden;
+      .post-title {@apply text-sm font-bold leading-tight; color: rgba(0,0,0,.84);}
+      .post-excerpt {@apply font-normal text-xs block mt-1 truncate; color: rgba(0,0,0,.54);}
       .post-meta {@apply font-light mt-1 text-xs; color: rgba(0,0,0,.58);
-        @screen sm {font-size: .85rem;}
         .author-name,
         .categories li {@apply text-nucssa-standard;
           &:hover {filter: contrast(2);}
@@ -36,4 +33,14 @@ body.archive {
 
 body.archive.author {
   .archive-heading-title::after {@apply mt-10;}
+}
+
+@screen sm {
+  body.archive article {
+    .right {@apply pt-2;
+      .post-title {@apply text-base;}
+      .post-excerpt {@apply text-sm whitespace-normal;}
+      .post-meta {font-size: .85rem;}
+    }
+  }
 }
