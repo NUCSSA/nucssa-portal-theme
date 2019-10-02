@@ -5,7 +5,7 @@
   .card {
     @apply w-full bg-cover bg-center bg-no-repeat relative;
     .card-content-wrapper {
-      padding-bottom: 46.58%;
+      padding-bottom: 56.25%;
 
       &:hover {
         background-color: rgba(0, 0, 0, .23);
@@ -35,11 +35,12 @@
   .card.column {
     .post-content {
       @apply absolute top-0 left-0 w-full h-full flex flex-col items-center text-white justify-end px-8;
-      padding-bottom: 4.75rem;
+      padding-bottom: 2.5rem;
       // background gradient
       background-image: linear-gradient(#00000000 0% 40%, #0000003b 60%, #00000045 80%, #0000004a 100%);
 
-      .title {@apply text-center text-xl font-medium mb-3;
+      .title {@apply text-center text-sm font-medium;
+        // underline bar dividing title and subtitle
         &::after {
           content: '';
           @apply block absolute;
@@ -48,12 +49,12 @@
           transform: translate3d(-50%, .2rem, 0);
         }
       }
-      .subtitle {@apply text-xs text-center font-medium;}
+      .subtitle {@apply text-xs text-center;}
     }
     .author-thumbnail {@apply block absolute border-white border-solid rounded-full bg-cover bg-center;
-      border-width: 3px;
-      width: 50px; height: 50px;
-      bottom: .8125rem; left: 50%; transform: translateX(-50%);
+      border-width: 2px;
+      width: 42px; height: 42px;
+      bottom: .75rem; left: 50%; transform: translateX(-50%);
 
       &:hover {filter: brightness(120%);}
     }
@@ -82,7 +83,7 @@
   }
 }
 
-@screen md {
+@screen sm {
   .post-cards {
     // margin: auto -15px;
     .card {
@@ -91,6 +92,19 @@
 
       .card-content-wrapper {
         padding-bottom: 64.7%;
+      }
+    }
+
+    .card.column {
+      .post-content {
+        padding-bottom: 4rem;
+
+        .title {@apply text-xl mb-3;}
+      }
+      .author-thumbnail {
+        border-width: 3px;
+        width: 50px; height: 50px;
+        bottom: .8125rem;
       }
     }
 
