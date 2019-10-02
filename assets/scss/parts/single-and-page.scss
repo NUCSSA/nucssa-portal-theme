@@ -38,7 +38,7 @@ body.page:not(.home) {
       .alignwide {@apply max-w-full px-0;
         @screen md {@apply max-w-5xl px-6;}
       }
-
+      #jp-relatedposts {@apply mx-auto;}
     }
     .post-tags {@apply mt-8;
       ul {@apply flex;

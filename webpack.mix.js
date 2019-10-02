@@ -76,6 +76,7 @@ const purgecssWordpressAdditional = {
     /^is-style/,
     /^reveal-overlay$/,
     /^current[-_]/,
+    /^jp/, // Jetpack stuff
   ]
 }
 const purgecss = require('@fullhuman/postcss-purgecss')({
