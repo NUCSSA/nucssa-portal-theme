@@ -19,7 +19,7 @@
   .col-2 {
     @apply pb-10 px-5;
     nav.policy-menu ul {
-      @apply flex flex-wrap justify-center font-hairline text-sm;
+      @apply flex flex-wrap justify-center font-thin text-sm;
       color: #E5127D;
       line-height: 2rem;
 
@@ -35,7 +35,7 @@
       width: 11.625rem;
     }
     .footer-nav ul {
-      @apply flex flex-col items-center font-hairline text-white text-sm;
+      @apply flex flex-col items-center font-thin text-white text-sm;
 
       li + li {
         @apply mt-4;
