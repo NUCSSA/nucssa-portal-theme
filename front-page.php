@@ -25,7 +25,8 @@ $context['latest_posts'] = new PostQuery([
 ]);
 $context['most_viewed'] = new PostQuery([
   'orderby' => 'meta_value',
-  'meta_key' => 'views',
+  'meta_key' => '_views',
+  'meta_type' => 'NUMERIC',
   'posts_per_page' => 6,
   'post_type' => 'post',
 ]);
