@@ -25,5 +25,5 @@ jobs:
         remote: ~/wordpress/wp-content/themes/nucssa-theme/dist
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        privateKey: ${{ secrets.privateKey }}
 
