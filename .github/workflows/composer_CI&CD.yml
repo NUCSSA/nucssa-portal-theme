@@ -1,0 +1,17 @@
+name: PHP Composer CI+CD
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: Install dependencies
+      run: composer install
+      
+    - name: Build
+      run: composer dump-autoload -o
