@@ -1,9 +1,6 @@
-name: PHP Composer CI CD
+name: PR - PHP Composer CI CD
 
-on:
-  push:
-    branches:
-      - master
+on: pull_request
 
 jobs:
   build:
@@ -19,10 +16,10 @@ jobs:
     - name: Build
       run: composer dump-autoload -o
 
-    - name: Deploy to Dev Server
+    - name: Deploy to Production Server
       uses: appleboy/scp-action@master
       env:
-        HOST: ${{ secrets.HOST }}
+        HOST: ${{ secrets.DEVHOST }}
         USERNAME: ${{ secrets.USERNAME }}
         KEY: ${{ secrets.privateKey }}
       with:

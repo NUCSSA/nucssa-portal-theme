@@ -1,9 +1,6 @@
-name: PHP Composer CI CD
+name: PR - Node CI+CD
 
-on:
-  push:
-    branches:
-      - master
+on: pull_request
 
 jobs:
   build:
@@ -13,19 +10,21 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Install dependencies
-      run: composer install
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
 
-    - name: Build
-      run: composer dump-autoload -o
+    - run: npm install
+    - run: npm run build
 
-    - name: Deploy to Dev Server
+    - name: Copy to production server
       uses: appleboy/scp-action@master
       env:
-        HOST: ${{ secrets.HOST }}
+        HOST: ${{ secrets.DEVHOST }}
         USERNAME: ${{ secrets.USERNAME }}
         KEY: ${{ secrets.privateKey }}
       with:
-        source: "./*.php,./style.css,./screenshot.png,inc,vendor,views"
+        source: "dist"
         target: "~/wordpress/wp-content/themes/nucssa-theme/"
         overwrite: true
