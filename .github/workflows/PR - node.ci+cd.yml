@@ -18,7 +18,7 @@ jobs:
     - run: npm install
     - run: npm run build
 
-    - name: Copy to production server
+    - name: Copy to dev server (https://dev.nucssa.org)
       uses: appleboy/scp-action@master
       env:
         HOST: ${{ secrets.DEVHOST }}
