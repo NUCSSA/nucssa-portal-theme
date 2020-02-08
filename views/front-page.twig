@@ -25,7 +25,13 @@
   {% endif %}
 </div>
 
-<main class="mt-5 mb-8">
+{% set bg_image = theme.uri ~ '/dist/images/武汉加油.jpg' %}
+<main class="pt-5 pb-8" style="
+  background-image: url({{bg_image}});
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;">
   <section class="latest-posts p-2">
     <h1 class="section-title">最新动态</h1>
     <div class="post-cards">
