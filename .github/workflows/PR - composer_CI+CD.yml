@@ -16,7 +16,7 @@ jobs:
     - name: Build
       run: composer dump-autoload -o
 
-    - name: Deploy to Production Server
+    - name: Deploy to Dev Server (https://dev.nucssa.org)
       uses: appleboy/scp-action@master
       env:
         HOST: ${{ secrets.DEVHOST }}

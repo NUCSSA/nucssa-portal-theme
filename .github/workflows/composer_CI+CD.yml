@@ -19,7 +19,7 @@ jobs:
     - name: Build
       run: composer dump-autoload -o
 
-    - name: Deploy to Dev Server
+    - name: Deploy to Production Server
       uses: appleboy/scp-action@master
       env:
         HOST: ${{ secrets.HOST }}
