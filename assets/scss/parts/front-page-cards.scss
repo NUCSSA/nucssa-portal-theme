@@ -1,9 +1,10 @@
 .post-cards {
   @apply flex flex-wrap justify-center items-center;
+  max-width: 1500px; @apply mx-auto; // limit to maximum of 3 items per row
 
   .card + .card {margin-top: 1.125rem;}
   .card {
-    @apply w-full bg-cover bg-center bg-no-repeat relative;
+    @apply w-full bg-cover bg-center bg-no-repeat relative rounded-lg;
     .card-content-wrapper {
       padding-bottom: 56.25%;
 
