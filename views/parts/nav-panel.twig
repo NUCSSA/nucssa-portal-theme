@@ -17,7 +17,7 @@
     </form>
 
     {# nav items #}
-    <nav role="navigation" class="flex-grow p-6 mt-2 text-xl">
+    <nav role="navigation" class="p-6 mt-2 text-xl">
       <ul>
         {% for item in main_nav.items %}
           <li class="{{ item.classes|join(' ') }}">
@@ -45,7 +45,7 @@
     </nav>
 
     {# social media links #}
-    <div class="social-icons flex justify-center text-2xl">
+    <div class="social-icons mt-auto flex justify-center text-2xl">
       <a href="{{theme.uri ~ '/dist/images/qr-code.png'}}"><i class="icon icon-wechat hover:text-green-800"></i></a>
       <a href="https://www.weibo.com/neucssa"><i class="icon icon-sina-weibo hover:text-red-600"></i></a>
       <a href="https://www.facebook.com/NEUCSSA"><i class="icon icon-facebook hover:text-blue-700"></i></a>
