@@ -16,50 +16,14 @@
 @import 'parts/login-modal';
 @import 'parts/navbar.scss';
 @import 'parts/nav-panel.scss';
-@import 'parts/front-page-cards.scss';
 @import 'parts/page-template-clubs.scss';
 @import 'parts/footer.scss';
 
 // Pages:
+@import 'parts/front-page';
 @import 'parts/search-result-page';
 @import 'parts/single-and-page.scss';
 @import 'parts/archive.scss';
 @import 'parts/404.scss';
 
-html {@apply bg-white;
-
-}
-
-main {
-  section + section {
-    @apply my-2;
-  }
-
-  section + section::before {
-    content: '';
-    @apply block relative mt-4;
-    width: 25%; height: 2px; background: #d92110c2; opacity: .38;
-    left: 50%; transform: translateX(-50%);
-    margin-bottom: .406rem;
-  }
-
-  section {
-    .section-title {
-      @apply text-center text-nucssa-section-title text-2xl font-bold mb-2;
-    }
-
-    .section-ending-controls {
-      @apply flex justify-center;
-
-      .btn-see-all {
-        &:hover {
-          background-color: darken($color: $view-all-btn, $amount: 5%);
-        }
-        @apply bg-nucssa-view-all-btn text-sm text-white rounded-lg mt-6 relative flex items-center;
-        padding: .6875rem 2.125rem;
-
-        .icon {@apply ml-2;}
-      }
-    }
-  }
-}
+html {@apply bg-white;}

@@ -1,113 +1,115 @@
-.post-cards {
-  @apply flex flex-wrap justify-center items-center;
-  max-width: 1500px; @apply mx-auto; // limit to maximum of 3 items per row
+body.home main {
+  .post-cards {
+    @apply flex flex-wrap justify-center items-center;
+    max-width: 1500px; @apply mx-auto; // limit to maximum of 3 items per row
 
-  .card + .card {margin-top: 1.125rem;}
-  .card {
-    @apply w-full bg-cover bg-center bg-no-repeat relative rounded-lg;
-    .card-content-wrapper {
-      padding-bottom: 56.25%;
+    .card + .card {margin-top: 1.125rem;}
+    .card {
+      @apply w-full bg-cover bg-center bg-no-repeat relative rounded-lg;
+      .card-content-wrapper {
+        padding-bottom: 56.25%;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, .23);
-      }
-    }
-  }
-  .card.announcement,
-  .card.activity {
-    .title-outer-box {
-      @apply absolute border-white border-2 border-solid bg-transparent;
-      width: 70%;
-      bottom: 1.3625rem; left: 50%;
-      transform: translateX(-50%);
-      padding: 2px;
-
-      .title-inner-box {
-        background-color: #F7F6F8;
-        padding: .8rem .5rem;
-        color: #2d2b2d;
-        .title {@apply text-sm font-medium text-center;}
-        .subtitle {opacity: .78; @apply font-medium text-xxs text-center mt-1;}
-      }
-    }
-  }
-
-  // Styling when post doesn't have video
-  .card.column {
-    .post-content {
-      @apply absolute top-0 left-0 w-full h-full flex flex-col items-center text-white justify-end px-8;
-      padding-bottom: 2.5rem;
-      // background gradient
-      background-image: linear-gradient(#00000000 0% 40%, #0000003b 60%, #00000045 80%, #0000004a 100%);
-
-      .title {@apply text-center text-sm font-medium;
-        // underline bar dividing title and subtitle
-        &::after {
-          content: '';
-          @apply block absolute;
-          width: 4rem; height: 3px; background-color: #FF6F86; border-radius: 5px;
-          left: 50%;
-          transform: translate3d(-50%, .2rem, 0);
+        &:hover {
+          background-color: rgba(0, 0, 0, .23);
         }
       }
-      .subtitle {@apply text-xs text-center;}
     }
-    .author-thumbnail {@apply block absolute border-white border-solid rounded-full bg-cover bg-center;
-      border-width: 2px;
-      width: 42px; height: 42px;
-      bottom: .75rem; left: 50%; transform: translateX(-50%);
+    .card.announcement,
+    .card.activity {
+      .title-outer-box {
+        @apply absolute border-white border-2 border-solid bg-transparent;
+        width: 70%;
+        bottom: 1.3625rem; left: 50%;
+        transform: translateX(-50%);
+        padding: 2px;
 
-      &:hover {filter: brightness(120%);}
-    }
-  }
-
-  // Styling when post has video
-  .card.column.has-video {
-    .post-content {
-      @apply flex items-center justify-center p-0;
-
-      .icon {
-        @apply text-4xl text-white rounded-full flex items-center justify-center;
-        width: 4.375rem; height: 4.375rem; padding-left: .56rem;
-        border: solid 2px white;
-        transition: all .3s;
-      }
-    }
-    .post-content:hover {
-      // background-color: rgba(0,0,0, .28);
-
-      .icon {
-        border-color: darken($color: white, $amount: .3);
-        transform: scale(1.15);
-      }
-    }
-  }
-}
-
-@screen sm {
-  .post-cards {
-    // margin: auto -15px;
-    .card {
-      margin: 0 15px 30px !important;
-      width: 439px;
-
-      .card-content-wrapper {
-        padding-bottom: 64.7%;
+        .title-inner-box {
+          background-color: #F7F6F8;
+          padding: .8rem .5rem;
+          color: #2d2b2d;
+          .title {@apply text-sm font-medium text-center;}
+          .subtitle {opacity: .78; @apply font-medium text-xxs text-center mt-1;}
+        }
       }
     }
 
+    // Styling when post doesn't have video
     .card.column {
       .post-content {
-        padding-bottom: 4rem;
+        @apply absolute top-0 left-0 w-full h-full flex flex-col items-center text-white justify-end px-8;
+        padding-bottom: 2.5rem;
+        // background gradient
+        background-image: linear-gradient(#00000000 0% 40%, #0000003b 60%, #00000045 80%, #0000004a 100%);
 
-        .title {@apply text-xl mb-3;}
+        .title {@apply text-center text-sm font-medium;
+          // underline bar dividing title and subtitle
+          &::after {
+            content: '';
+            @apply block absolute;
+            width: 4rem; height: 3px; background-color: #FF6F86; border-radius: 5px;
+            left: 50%;
+            transform: translate3d(-50%, .2rem, 0);
+          }
+        }
+        .subtitle {@apply text-xs text-center;}
       }
-      .author-thumbnail {
-        border-width: 3px;
-        width: 50px; height: 50px;
-        bottom: .8125rem;
+      .author-thumbnail {@apply block absolute border-white border-solid rounded-full bg-cover bg-center;
+        border-width: 2px;
+        width: 42px; height: 42px;
+        bottom: .75rem; left: 50%; transform: translateX(-50%);
+
+        &:hover {filter: brightness(120%);}
       }
     }
 
+    // Styling when post has video
+    .card.column.has-video {
+      .post-content {
+        @apply flex items-center justify-center p-0;
+
+        .icon {
+          @apply text-4xl text-white rounded-full flex items-center justify-center;
+          width: 4.375rem; height: 4.375rem; padding-left: .56rem;
+          border: solid 2px white;
+          transition: all .3s;
+        }
+      }
+      .post-content:hover {
+        // background-color: rgba(0,0,0, .28);
+
+        .icon {
+          border-color: darken($color: white, $amount: .3);
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+
+  @screen sm {
+    .post-cards {
+      // margin: auto -15px;
+      .card {
+        margin: 0 15px 30px !important;
+        width: 439px;
+
+        .card-content-wrapper {
+          padding-bottom: 64.7%;
+        }
+      }
+
+      .card.column {
+        .post-content {
+          padding-bottom: 4rem;
+
+          .title {@apply text-xl mb-3;}
+        }
+        .author-thumbnail {
+          border-width: 3px;
+          width: 50px; height: 50px;
+          bottom: .8125rem;
+        }
+      }
+
+    }
   }
 }
