@@ -23,11 +23,6 @@
   a {@apply text-blue-600;}
 }
 
-body article .post-content {
-  > ul, > ol {@apply pl-16 mb-5 #{!important};}
-  blockquote.is-style-large {@apply pl-10 #{!important};}
-}
-
 .editor-styles-wrapper .block-editor-writing-flow .editor-post-title #post-title-0 {
   @apply font-sans text-4xl font-normal;
   color: rgba(0,0,0,.84);

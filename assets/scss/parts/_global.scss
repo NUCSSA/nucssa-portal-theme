@@ -1,1 +1,8 @@
 a:hover {@apply text-nucssa-standard;}
+.alignfull {@apply w-screen px-0;
+  margin-left: calc(-100vw / 2 + 100% / 2);
+}
+.alignwide {@apply max-w-full px-0;
+  @screen md {@apply max-w-5xl px-6;}
+}
+.aligncenter {@apply mx-auto;}
