@@ -32,7 +32,7 @@ body.page:not(.home) {
         }
       }
     }
-    .post-content {@apply mt-8 mx-auto max-w-2xl px-0;
+    .post-content {@apply mt-8 mx-auto max-w-2xl;
       #jp-relatedposts {@apply mx-auto;}
     }
     .post-tags {@apply mt-8;
