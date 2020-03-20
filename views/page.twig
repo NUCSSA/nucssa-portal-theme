@@ -4,10 +4,13 @@
 	<main class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
       {# thumbnail #}
-      <div class="post-thumbnail">
-        <div class="post-thumbnail-bg-layer" style="background-image: url('{{ post.thumbnail.src|resize(1200, 300, "center") }}')"></div>
-        <img class="post-thumbnail-image" src="{{ post.thumbnail.src|resize(1200, 300, "center") }}"/>
-      </div>
+      {% if post.thumbnail %}
+        <div class="post-thumbnail">
+          <div class="post-thumbnail-bg-layer" style="background-image: url('{{ post.thumbnail.src|resize(1200, 300, "center") }}')"></div>
+          <img class="post-thumbnail-image" src="{{ post.thumbnail.src|resize(1200, 300, "center") }}"/>
+        </div>
+      {% endif %}
+
       {# title #}
       <h1 class="post-title">{{ post.title|striptags|raw }}</h1>
 

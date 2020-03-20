@@ -4,11 +4,14 @@
 	<main class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
       {# thumbnail #}
-      <div class="post-thumbnail">
-        {% set thumbnail_src = post.meta('_banner_image_desktop') ? Image(post.meta('_banner_image_desktop')).src('in_post_thumbnail') : post.thumbnail.src("in_post_thumbnail") %}
-        <div class="post-thumbnail-bg-layer" style="background-image: url('{{ thumbnail_src }}')"></div>
-        <img class="post-thumbnail-image" src="{{ thumbnail_src }}"></img>
-      </div>
+      {% set thumbnail_src = post.meta('_banner_image_desktop') ? Image(post.meta('_banner_image_desktop')).src('in_post_thumbnail') : post.thumbnail.src("in_post_thumbnail") %}
+      {% if thumbnail_src %}
+        <div class="post-thumbnail">
+          <div class="post-thumbnail-bg-layer" style="background-image: url('{{ thumbnail_src }}')"></div>
+          <img class="post-thumbnail-image" src="{{ thumbnail_src }}"></img>
+        </div>
+      {% endif %}
+
       {# title #}
       <h1 class="post-title">{{ post.title|striptags|raw }}</h1>
 
