@@ -1,8 +1,10 @@
 a:hover {@apply text-nucssa-standard;}
-.alignfull {@apply w-screen px-0;
+.alignfull {@apply w-screen;
   margin-left: calc(-100vw / 2 + 100% / 2) !important;
 }
-.alignwide {@apply max-w-full px-0;
-  @screen md {@apply max-w-5xl px-6;}
+.alignwide {@apply w-screen -mx-6;
+  @screen md {@apply max-w-5xl mx-0;
+    transform: translateX(calc(-50% + theme('maxWidth.2xl') / 2));
+  }
 }
 .aligncenter {@apply mx-auto;}
