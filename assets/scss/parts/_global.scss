@@ -9,10 +9,3 @@ a:hover {@apply text-nucssa-standard;}
   }
 }
 .aligncenter {@apply mx-auto;}
-
-html {
-  -moz-filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-  filter: gray; /* IE6-9 */
-  filter: grayscale(100%);
-}
