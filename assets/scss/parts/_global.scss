@@ -1,6 +1,6 @@
 a:hover {@apply text-nucssa-standard;}
 .alignfull {@apply w-screen;
-  margin-left: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%) !important; // `important` is required here to override jetpack tiled gallery stying
 }
 .alignwide {@apply w-screen -mx-6;
   margin-left: calc(-50vw + 50%);
