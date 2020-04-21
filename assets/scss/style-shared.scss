@@ -13,7 +13,7 @@
   h5 {@apply text-sm font-semibold text-gray-600;}
   h6 {@apply text-xs font-semibold text-gray-600;}
 
-  img {@apply border-none;}
+  img {@apply border-none inline;}
   p {@apply my-5;}
   p.has-drop-cap:not(:focus):first-letter {font-size: 5em;}
   ul:not(.blocks-gallery-grid), ol {@apply ml-5 pl-5 mb-5;}
