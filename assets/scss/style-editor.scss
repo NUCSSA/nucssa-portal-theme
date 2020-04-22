@@ -1,1 +1,9 @@
 @import 'parts/club-post-editor.scss';
+
+.block-editor-block-list__layout {
+  ol,
+  ul {
+    padding-left: 2.5rem !important;
+    @apply mx-auto #{!important};
+  }
+}
