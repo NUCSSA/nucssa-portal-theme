@@ -1,5 +1,5 @@
 <?php
-namespace nucssa_theme\inc;
+namespace nucssa_theme;
 
 class TimberMods {
 
