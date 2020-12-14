@@ -1,6 +1,6 @@
 <?php
 
-namespace nucssa_theme\inc;
+namespace nucssa_theme;
 
 class Scripts {
   public static function init(){

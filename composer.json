@@ -1,11 +1,14 @@
 {
   "require": {
-    "timber/timber": "^1.10"
+    "timber/timber": "~1.10"
   },
   "autoload": {
     "files": ["inc/constants.php"],
     "psr-4": {
-      "": ["inc/"]
+      "nucssa_theme\\": ["inc/"]
     }
+  }, 
+  "config": {
+    "optimize-autoloader": true
   }
 }
