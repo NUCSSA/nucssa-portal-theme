@@ -1,4 +1,10 @@
-body.page-template-page-template-clubs {
+/**
+ * Setting clubs archive page styling
+ * 
+ * * styling for club card is in plugin's block styling sheet. 
+ * * (nucssa-core/assets/js/gutenberg/blocks/club-info/style.scss)
+ */ 
+body.post-type-archive-club {
   main {@apply pt-8 pb-16; background: linear-gradient(135deg, #f7b333, #f00c2f);
     .title {@apply my-4 text-center font-bold text-3xl text-white;
       @screen md {@apply text-4xl;}

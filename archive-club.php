@@ -15,4 +15,4 @@ $context['posts'] = new PostQuery([
   'post_type' => 'club',
 ]);
 
-Timber::render('page-template-clubs.twig', $context);
+Timber::render('archive-club.twig', $context);

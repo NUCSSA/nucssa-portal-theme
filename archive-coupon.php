@@ -15,4 +15,4 @@ $context['posts'] = new PostQuery([
   'post_type' => 'coupon',
 ]);
 
-Timber::render('page-template-coupons.twig', $context);
+Timber::render('archive-coupon.twig', $context);
