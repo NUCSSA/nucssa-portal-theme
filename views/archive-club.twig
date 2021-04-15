@@ -14,7 +14,7 @@
               <div class="detail">
                 {# workshop schedule #}
                 {% set workshop = function('json_decode', post.meta('_workshop_schedule')) %}
-                {% if workshop %}
+                {% if workshop and (workshop.location or workshop.days or workshop.time) %}
                   <div class="workshop-schedule">{{ workshop.location }} | {{ workshop.days|join(', ') }} | {{ workshop.time }}</div>
                 {% endif %}
                 {# club name #}
