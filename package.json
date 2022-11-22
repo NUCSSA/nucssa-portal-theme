@@ -29,7 +29,7 @@
     "@wordpress/i18n": "^3.16.0",
     "@wordpress/plugins": "^2.23.0",
     "balloon-css": "^1.2.0",
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.27.10",
     "browser-sync-webpack-plugin": "^2.2.2",
     "cross-env": "^5.2.1",
     "foundation-sites": "^6.6.3",
