@@ -128,7 +128,7 @@ mix.webpackConfig({
 .js('assets/js/main.js', 'dist/js/main.js')
 .copyDirectory('assets/images/', 'dist/images/')
 .browserSync({
-  proxy: 'wp.localhost',
+	proxy: 'localhost:8080', // your WP instance URL here
   files: [ '*.php', '*.twig', '*.js', 'dist/', 'inc/', 'views/'],
   open: 'ui',
   ghostMode: false, // mirror clicks, scrolls & form inputs on all connected devices
