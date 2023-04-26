@@ -32,6 +32,7 @@
     "browser-sync": "^2.29.1",
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^5.2.1",
+    "eslint": "^8.39.0",
     "foundation-sites": "^6.7.5",
     "laravel-mix": "^4.1.4",
     "motion-ui": "^2.0.4",
@@ -44,13 +45,12 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "eslint": "^8.39.0",
     "flickity": "^2.3.0",
     "prop-types": "^15.8.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
   },
   "volta": {
-    "node": "12.22.12"
+    "node": "14.21.3"
   }
 }
